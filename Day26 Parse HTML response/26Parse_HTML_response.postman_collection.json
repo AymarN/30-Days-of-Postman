@@ -1,0 +1,272 @@
+{
+	"info": {
+		"_postman_id": "8220b1c2-c890-46c7-8fef-45d3eae42062",
+		"name": "Day 26: Parse HTML response",
+		"description": "## Instructions for Day 26: Parse HTML response\n\n1. **Get the challenge:** Fork [the parent collection `Day 26: Parse HTML response`](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-9f9419fe-5249-4b44-b07f-4cb3ef913c81) from the main workspace to your own public workspace.\n2. **Read the documentation:** In your fork, select the first folder. Expand the context bar on the right to follow the instructions in the collection documentation.\n3. **Submit your solution:** Select the second folder `Submit your solution` and follow the instructions in the documentation to validate your solution.\n\n## Concepts covered\n- [Variables](https://learning.postman.com/docs/sending-requests/variables/)\n- [Scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/)\n- [Using external libraries](https://learning.postman.com/docs/writing-scripts/script-references/postman-sandbox-api-reference/#using-external-libraries)\n- [Writing tests](https://learning.postman.com/docs/writing-scripts/test-scripts/)\n\n## Additional resources\n- [Example](https://www.postman.com/postman/workspace/postman-answers/collection/9215231-cd114167-c5a1-495e-a50f-29d6dd5af4e0?ctx=documentation) in Postman Answers workspace\n- [Check for Broken Links on Your Website Using a Postman Collection](https://blog.postman.com/check-for-broken-links-on-your-website-using-a-postman-collection/) blog\n\n## Next challenge\n\n- [Scenario testing](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-e9968036-7ad8-4daa-97c3-331184213392)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10921002"
+	},
+	"item": [
+		{
+			"name": "Parse HTML response",
+			"item": [
+				{
+					"name": "bing",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Parse HTML\r",
+									"var cheerio = require('cheerio');\r",
+									"var $ = cheerio.load(pm.response.text());\r",
+									"var linksTab  = [];\r",
+									"var tabWithHttp = [];\r",
+									"var text = \"\";\r",
+									"//#b_content\r",
+									"// $('#blogPagination').find('a')\r",
+									"links = $('#b_content').find('a'); //jquery get all hyperlinks\r",
+									"  $(links).each(function(i, link){\r",
+									"    linksTab.push($(link).attr('href'));\r",
+									"  });\r",
+									"\r",
+									"function refactorTab(aTab){\r",
+									"        var name = \"http\";\r",
+									"        for(var i  in aTab){\r",
+									"            text = aTab[i];\r",
+									"            //console.log(\"*******\"+ aTab[i]);\r",
+									"            result = /http/.test(text);\r",
+									"            if( result == true){\r",
+									"                tabWithHttp.push(text);\r",
+									"        }\r",
+									"        \r",
+									"    }\r",
+									"    console.log(\"****tabWithHttp*** \"+ tabWithHttp);\r",
+									"    return tabWithHttp;\r",
+									"}\r",
+									"refactorTab(linksTab)\r",
+									"pm.collectionVariables.set(\"links\",JSON.stringify(tabWithHttp));\r",
+									"\r",
+									"pm.test(\"Day 26 bing Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var collLink = pm.collectionVariables.get(\"links\");\r",
+									"pm.test(\"Day 26 bing Array properly formatted\", function() {\r",
+									"pm.expect(collLink.length).not.to.eql(0);\r",
+									"pm.expect(collLink.length).not.to.be.undefined;\r",
+									"pm.expect(collLink.length).not.to.be.NaN\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.bing.com/search?q=postman",
+							"protocol": "https",
+							"host": [
+								"www",
+								"bing",
+								"com"
+							],
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "postman"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "It's time to work on your next challenge.\n\n1. **Add a request**: Add a request called `bing` to the folder `Parse HTML response` with the following details:\n  - `GET` request method\n  - `https://www.bing.com/search` request URL\n  - Query parameter `q` with the value of any term, such as `postman`.\n\n  Hit **Send**, and look at the HTML response in Pretty, Raw, or Preview mode to ensure that you are receiving some search results.\n1. **Scrape web links**: Under the **Tests** tab, write a script using [the built-in library cheerio](https://learning.postman.com/docs/writing-scripts/script-references/postman-sandbox-api-reference/#using-external-libraries) to save all the links in the HTML response as an array. Try to only collect links that are displayed in the search results. And then store the array as a [collection variable](https://learning.postman.com/docs/sending-requests/variables/#variable-scopes) called `links`.\n\n  Hit **Send** to ensure your collection variable contains an array of links. Then [persist the collection variable](https://learning.postman.com/docs/sending-requests/variables/#sharing-and-persisting-data) so that the array is saved with the collection under `INITIAL VALUE` as well as `CURRENT VALUE`.\n1. **Add two tests**: Write a test to ensure a successful response status code from bing. Then write another test to validate the information being stored as a collection variable is formatted as an array. Send the request to make sure the tests pass appropriately, and save your changes. \n\nOnce you complete these steps, move on to the next folder in this collection to submit your solution. Follow the instructions in the request documentation.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Submit your solution",
+			"item": [
+				{
+					"name": "submit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// counter for passed tests\r",
+									"let pass = 0\r",
+									"let totalToPass = 6\r",
+									"\r",
+									"let collection = pm.response.json().collection\r",
+									"\r",
+									"pm.test(\"If you have any failures, review the failed test results or ask for support in the community forum. Remember to save your changes if you update the collection. When all of your tests pass, you are done with today's challenge.\", () => {\r",
+									"    pm.expect(true);\r",
+									"    pass += 1\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code is 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pass += 1\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct collection returned\", () => {\r",
+									"    pm.expect(collection.info.name).equals(\"Day 26: Parse HTML response\")\r",
+									"    pass += 1\r",
+									"})\r",
+									"\r",
+									"pm.test(\"Request added correctly\", () => {\r",
+									"    pm.expect(collection.item[0].item.length, 'check number of requests').equals(1)\r",
+									"\r",
+									"    let bingRequest = collection.item[0].item.find(req => { return req.name === \"bing\"})\r",
+									"    pm.expect(bingRequest.name, 'check name').equals(\"bing\")\r",
+									"    pm.expect(bingRequest.request.method, 'check method').equals(\"GET\")\r",
+									"    pm.expect(bingRequest.request.url.raw, 'check url').includes(\"https://www.bing.com/search?q=\")\r",
+									"\r",
+									"    pass += 1\r",
+									"})\r",
+									"\r",
+									"pm.test(\"Script added correctly\", () => {\r",
+									"    let bingRequest = collection.item[0].item.find(req => { return req.name === \"bing\"})\r",
+									"\r",
+									"    let test = bingRequest.event.find(event => {return event.listen === \"test\"})\r",
+									"    pm.expect(test.listen, 'check test script').equals(\"test\")\r",
+									"    pm.expect(test.script.exec.toString(), 'check cheerio').to.include(\"cheerio.load\")\r",
+									"\r",
+									"    let collVar = collection.variable.find(variable => { return variable.key === 'links'})\r",
+									"    pm.expect(collVar.key, 'check collection variable set').to.equal('links')\r",
+									"    pm.expect(JSON.parse(collVar.value), 'check collection variable array').to.be.an('array')\r",
+									"\r",
+									"    pass += 1\r",
+									"})\r",
+									"\r",
+									"pm.test(\"Tests added correctly\", () => {\r",
+									"    let bingRequest = collection.item[0].item.find(req => { return req.name === \"bing\"})\r",
+									"\r",
+									"    let test = bingRequest.event.find(event => {return event.listen === \"test\"})\r",
+									"\r",
+									"    pm.expect(test.script.exec.toString(), 'check tests').to.include(\"pm.test\")\r",
+									"\r",
+									"    pass += 1\r",
+									"})\r",
+									"\r",
+									"// visualization for test results\r",
+									"let template\r",
+									"if (pass == totalToPass) {\r",
+									"    template = `🍪 passing!\r",
+									"        <br />\r",
+									"        <img src=\"https://media4.giphy.com/media/9fuvOqZ8tbZOU/giphy.gif?cid=ecf05e473iskrumhqsks5kkf6xvzxx87smuqhwmzpg9s4yv9&rid=giphy.gif&ct=g\" />\r",
+									"    `\r",
+									"} else {\r",
+									"    template = `🙅 please try again\r",
+									"        <br />\r",
+									"        <img src=\"https://media1.giphy.com/media/tP3Tu61F2RBZe/giphy.gif?cid=ecf05e47c5swa49om8lx3mvexwarnmxpqzs8zh5qa8a2cjm2&rid=giphy.gif&ct=g\" />\r",
+									"    `\r",
+									"}\r",
+									"pm.visualizer.set(template)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{postman_api_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.getpostman.com/collections/{{collection_uid}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"getpostman",
+								"com"
+							],
+							"path": [
+								"collections",
+								"{{collection_uid}}"
+							]
+						},
+						"description": "It's time to submit your solution.\n\n1. **Use a Postman environment:** Find the `Postman API env` environment from the previous challenge. Update the `collection_uid` with the current collection's ID.\n1. **Validate your solution**: Save your changes in the collection and environment. Hit **Send** and look under the **Tests** tab of the server response at the bottom to review your test results.\n\nIf you have any failures, review the failed test results or ask for support in the [community forum](https://community.postman.com/). When all of your tests pass, you are done with today's challenge. Remember to save your changes as you'll need to pass all the challenges to claim a **30 days of Postman** badge."
+					},
+					"response": []
+				}
+			],
+			"description": "Follow the instructions in the request documentation."
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{postman_api_key}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "postman_api_key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"value": ""
+		},
+		{
+			"key": "links",
+			"value": "[\"https://www.postman.com/\",\"https://www.postman.com/downloads/\",\"https://www.postman.com/api-platform\",\"https://www.postman.com/product/api-client/\",\"https://www.postman.com/pricing/\",\"https://www.postman.com/use-cases/api-testing-automation/\",\"https://www.postman.com/postman\",\"https://www.postman.com/tools\",\"https://www.postman.com/explore\",\"https://itunes.apple.com/ca/movie/the-postman/id279599150\",\"https://itunes.apple.com/ca/movie/the-postman/id279599150\",\"https://itunes.apple.com/ca/movie/the-postman/id279599150\",\"https://www.microsoft.com/en-ca/p/the-postman-1997/8d6kgwzl5vz3\",\"https://www.microsoft.com/en-ca/p/the-postman-1997/8d6kgwzl5vz3\",\"https://www.microsoft.com/en-ca/p/the-postman-1997/8d6kgwzl5vz3\",\"https://play.google.com/store/movies/details/L_uomo_del_giorno_dopo?id=TfztIsiG6qo&gl=US\",\"https://play.google.com/store/movies/details/L_uomo_del_giorno_dopo?id=TfztIsiG6qo&gl=US\",\"https://play.google.com/store/movies/details/L_uomo_del_giorno_dopo?id=TfztIsiG6qo&gl=US\",\"http://en.wikipedia.org/wiki/The_Postman_(film)\",\"https://app.getpostman.com/app/download/win64\",\"https://www.postman.com/products/\",\"https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop\",\"https://www.imdb.com/title/tt0119925/\",\"https://www.guru99.com/postman-tutorial.html\",\"https://www.guru99.com/postman-tutorial.html\",\"https://www.guru99.com/postman-tutorial.html\",\"https://www.guru99.com/postman-tutorial.html\",\"https://www.guru99.com/postman-tutorial.html\",\"https://www.postman.com/product/workspaces/\",\"https://store.getpostman.com/\",\"https://www.bing.com/videos/search?q=The+Postman+1997+Film+official+trailer&FORM=VRDGAR&view=detail&mid=67685D62B1C49683A62867685D62B1C49683A628\",\"http://en.wikipedia.org/wiki/The_Postman_(film)\",\"https://www.imdb.com/title/tt0119925/plotsummary\",\"http://www.imdb.com/title/tt0119925/\",\"https://www.rottentomatoes.com/m/the_postman/\",\"https://www.metacritic.com/movie/the-postman/details\",\"http://www.thegeektwins.com/2017/10/everything-you-need-to-know-about-tom.html#:~:text=The%20Postman%20(1997)%20-%20Tom%20Petty%20Tom%20Petty%20has%20died%20and%20he's%20best%20remembered%20for%20his%20music%20and%20a%20bizarre%20cameo.\",\"https://ivanskorobogatov.wordpress.com/tag/the-postman-full-movie-free-download-in-mp4-torrent/#:~:text=The%20Postman%20is%20a%20masterpiece,Olivia%20Williams%20and%20Jame%20Russo.\",\"https://bombreport.com/yearly-breakdowns/1997-2/the-postman/#:~:text=The%20Postman%20bowed%20into%20a,Paris%20and%20Mr.%20Magoo%20.\",\"http://www.cnn.com/SHOWBIZ/9801/14/review.postman/\",\"http://www.reelviews.net/php_review_template.php?identifier=635\",\"http://usatoday30.usatoday.com/life/enter/movies/lef010.htm\",\"https://en.wikipedia.org\",\"https://www.imdb.com/title/tt0119925/\",\"https://bombreport.com\",\"http://www.thegeektwins.com\",\"https://ivanskorobogatov.wordpress.com\",\"https://www.rottentomatoes.com/m/the_postman/reviews\",\"https://creativecommons.org/licenses/by-sa/3.0/\"]"
+		}
+	]
+}

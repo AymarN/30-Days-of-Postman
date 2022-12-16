@@ -1,0 +1,833 @@
+{
+	"info": {
+		"_postman_id": "36cc2393-fce1-4a14-8c1c-58b248a5584b",
+		"name": "Day 27: Scenario testing",
+		"description": "## Instructions for Day 27: Scenario testing\n\n1. **Get the challenge:** Fork [the parent collection `Day 27: Scenario testing`](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-e9968036-7ad8-4daa-97c3-331184213392) from the main workspace to your own public workspace.\n2. **Read the documentation:** In your fork, select the first folder. Expand the context bar on the right to follow the instructions in the collection documentation.\n3. **Submit your solution:** Select the second folder `Submit your solution` and follow the instructions in the documentation to validate your solution.\n\n## Concepts covered\n- [Variables](https://learning.postman.com/docs/sending-requests/variables/)\n- [Scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/)\n- [Writing tests](https://learning.postman.com/docs/writing-scripts/test-scripts/)\n\n## Additional resources\n- [How to break an API](https://youtu.be/c-5UMf6sWk4) livestream\n- [The Unbreakable API](https://www.postman.com/postman/workspace/unbreakable-api/overview) public workspace\n- [Acing your API tests — what you need to know for test automation](https://medium.com/better-practices/acing-your-apis-what-you-need-to-know-for-test-automation-e3fdba3519b9) blog\n\n## Next challenge\n- [UI testing](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-01eeea90-778a-4d8f-82b6-87e16ca7d45e)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10921002"
+	},
+	"item": [
+		{
+			"name": "Scenario testing",
+			"item": [
+				{
+					"name": "Set up",
+					"item": [
+						{
+							"name": "User create endpoint",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"postmaster@jecorde.net\",\n    \"password\": \"tegucigalpa\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/user/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"user",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "JWT access token and user information",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/user/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"user",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unable to create user",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/user/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"user",
+												""
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Create new movie",
+					"item": [
+						{
+							"name": "Movie create endpoint",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Day 27 The test passed\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"pm.collectionVariables.set(\"id\", jsonData.id);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"actors\": \"Christopher Lambert, Kelly LeBrock\",\n    \"director\": \"Timothy Hines\",\n    \"genres\": \"Drama\",\n    \"imdb\": \"https://www.imdb.com/title/tt3453052/\",\n    \"language\": \"English\",\n    \"minutes\": \"111\",\n    \"title\": \"10 Days in a Madhouse\",\n    \"year\": \"2015\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/movies/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"movies",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Movie ID",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) Bearer < JWT >",
+												"key": "Authorization",
+												"value": "culpa aliqua"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/movies/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"movies",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Movie read endpoint",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Day 27 Movie read Endpoint Status Code\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/movies/?id={{id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"movies",
+										""
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "{{id}}",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Movie information matching target ID",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/movies/?id=-37266203",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"movies",
+												""
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "-37266203"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "All movies read endpoint",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"\r",
+											"var response = pm.response.json();\r",
+											"var moviesList = []\r",
+											"\r",
+											"function listofmovies(results){\r",
+											"    let mytab= [];\r",
+											"    let jsonString;\r",
+											"        for(var tab of results){\r",
+											"            if(tab.hasOwnProperty('id')) {\r",
+											"                jsonString = JSON.stringify(tab.id);\r",
+											"                mytab.push(jsonString);\r",
+											"            }\r",
+											"        }\r",
+											"    return mytab;\r",
+											"}\r",
+											"moviesList = listofmovies(response);\r",
+											"var getId = pm.collectionVariables.get(\"id\");\r",
+											"console.log(moviesList);\r",
+											"console.log(getId);\r",
+											"function checkId(){\r",
+											"    var movieId;\r",
+											"    for(var id of moviesList){\r",
+											"        if (parseInt(id) === getId){\r",
+											"            movieId = parseInt(id);\r",
+											"            console.log(\"id is available\");\r",
+											"        }\r",
+											"\r",
+											"    }\r",
+											"    return movieId;\r",
+											"}\r",
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    if (checkId() != null || checkId != undefined){\r",
+											"        pm.response.to.have.status(200);\r",
+											"    }\r",
+											"});\r",
+											"\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/movies/all",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"movies",
+										"all"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "All movies in the system",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/movies/all",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"movies",
+												"all"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Movie delete endpoint",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    if(jsonData.message === \"movie removed.\") {\r",
+											"            pm.response.to.have.status(200);\r",
+											"    }\r",
+											"    else{\r",
+											"        console.log(\"Something went Wrong TEST FAILED\");\r",
+											"        pm.response.to.have.status(400);\r",
+											"    }\r",
+											"    \r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/movies/?id={{id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"movies",
+										""
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "{{id}}",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Movie removed",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "(Required) Bearer < JWT >",
+												"key": "Authorization",
+												"value": "culpa aliqua"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/movies/?id=-37266203",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"movies",
+												""
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "-37266203"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unable to remove movie",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "(Required) Bearer < JWT >",
+												"key": "Authorization",
+												"value": "culpa aliqua"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/movies/?id=-37266203",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"movies",
+												""
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "-37266203"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "All movies read endpoint",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var response = pm.response.json();\r",
+											"var moviesList = []\r",
+											"\r",
+											"function listofmovies(results){\r",
+											"    let mytab= [];\r",
+											"    let jsonString;\r",
+											"        for(var tab of results){\r",
+											"            if(tab.hasOwnProperty('id')) {\r",
+											"                jsonString = JSON.stringify(tab.id);\r",
+											"                mytab.push(jsonString);\r",
+											"            }\r",
+											"        }\r",
+											"    return mytab;\r",
+											"}\r",
+											"moviesList = listofmovies(response);\r",
+											"var getId = pm.collectionVariables.get(\"id\");\r",
+											"console.log(moviesList);\r",
+											"console.log(getId);\r",
+											"    \r",
+											"\r",
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    for(var id in moviesList){\r",
+											"        if (parseInt(id) !== getId){\r",
+											"            //console.log(\"id is not available\");\r",
+											"            pm.response.to.have.status(200);\r",
+											"        }\r",
+											"        else {\r",
+											"            console.log(\"TEST FAILED\");\r",
+											"            pm.response.to.have.status(400);\r",
+											"        }\r",
+											"\r",
+											"    }\r",
+											"    \r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/movies/all",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"movies",
+										"all"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "All movies in the system",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/movies/all",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"movies",
+												"all"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			],
+			"description": "It's time to work on your next challenge.\n\n1. **Import API and Collection**: [Import data](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#importing-postman-data) from the following link: \n  - `https://www.unbreakableapi.com/apispec.json` \n\n  Select the checkbox to \"Generate collection from imported APIs\" as Documentation. Once confirmed, you should see an API and a collection, both called `Unbreakable API Lite`.\n1. **Configure base URL**: In this collection `Day 27: Scenario testing`, add a collection variable called `baseUrl` with the value `https://www.unbreakableapi.com`, and save your changes.\n1. **Add folders**: Add two new folders called `Set up` and `Create new movie` nested under the `Scenario testing` folder.\n1. **Set up authorization**: Find the following request in the `Unbreakable API Lite` collection, and duplicate it over to the `Set up` folder. \n\n  - `POST` User create endpoint\n\n  Under the **Body** tab, update the email and password of your new user, and hit **Send**. The response will include a token. Copy and paste the token to manually set a collection variable called `token`. Set a `Bearer Token` authorization type for the folder `Create new movie` using the new `token` variable.\n1. **Add a scenario**: Find the following requests in the `Unbreakable API Lite` collection, and duplicate them over to the `Create new movie` folder.\n  - `POST` Movie create endpoint\n  - `GET` Movie read endpoint\n  - `GET` All movies read endpoint\n  - `DELETE` Movie delete endpoint\n  - `GET` All movies read endpoint\n\n  For each of the requests in the `Create new movie` folder, let's add a test and some code to programmatically get and set a variable.\n  - `POST` Movie create endpoint - Update the request body with details of a different movie. Add a Postman test to verify a successful response (you may need to send the request first). Then, add some code to set a collection variable called `id` to store the new movie's id. Send the request again to verify the variable is set correctly.\n  - `GET` Movie read endpoint - Update the query parameter to utilize your new `id` variable. Add a test to verify a successful response.\n  - `GET` All movies read endpoint - Add a test to verify the list of all movies includes your new movie's id.\n  - `DELETE` Movie delete endpoint - Update the query parameter to utilize your new `id` variable. Add a test to verify a successful response, and **Send** to delete the movie.\n  - `GET` All movies read endpoint - Add a test to verify the list of all movies does NOT include your movie's id.\n1. **Run the folder**: Use the runner to execute all the requests in the folder `Create new movie`. Make sure all your tests pass, and save your changes.\n\nOnce you complete these steps, move on to the next folder in this collection to submit your solution. Follow the instructions in the request documentation.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Submit your solution",
+			"item": [
+				{
+					"name": "submit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// counter for passed tests\r",
+									"let pass = 0\r",
+									"let totalToPass = 7\r",
+									"\r",
+									"let collection = pm.response.json().collection\r",
+									"\r",
+									"pm.test(\"If you have any failures, review the failed test results or ask for support in the community forum. Remember to save your changes if you update the collection. When all of your tests pass, you are done with today's challenge.\", () => {\r",
+									"    pm.expect(true);\r",
+									"    pass += 1\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code is 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pass += 1\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct collection returned\", () => {\r",
+									"    pm.expect(collection.info.name).equals(\"Day 27: Scenario testing\")\r",
+									"    pass += 1\r",
+									"})\r",
+									"\r",
+									"let scenarioFolder = collection.item.find(fol => { return fol.name === \"Scenario testing\"})\r",
+									"\r",
+									"pm.test(\"Folders added correctly\", () => {\r",
+									"    pm.expect(collection.item.length, 'check number of folders').equals(2)\r",
+									"\r",
+									"    let setupFolder = scenarioFolder.item.find(fol => { return fol.name === \"Set up\"})\r",
+									"    pm.expect(setupFolder.item.length, 'check requests in first folder').equals(1)\r",
+									"\r",
+									"    let newMovieFolder = scenarioFolder.item.find(fol => { return fol.name === \"Create new movie\" })\r",
+									"    pm.expect(newMovieFolder.item.length, 'check requests in second folder').equals(5)\r",
+									"\r",
+									"    pass += 1\r",
+									"})\r",
+									"\r",
+									"pm.test(\"Authorization added correctly\", () => {\r",
+									"    let newMovieFolder = scenarioFolder.item.find(fol => { return fol.name === \"Create new movie\" })\r",
+									"    pm.expect(newMovieFolder.auth.type).equals(\"bearer\")\r",
+									"    pm.expect(newMovieFolder.auth.bearer[0].value).equals(\"{{token}}\")\r",
+									"\r",
+									"    pass += 1\r",
+									"})\r",
+									"\r",
+									"pm.test(\"Variables added correctly\", () => {\r",
+									"\r",
+									"    let baseVar = collection.variable.find(variable => { return variable.key === 'baseUrl'})\r",
+									"    pm.expect(baseVar.key, 'check base URL variable set').to.equal('baseUrl')\r",
+									"    pm.expect(baseVar.value, 'check base URL').to.equal('https://www.unbreakableapi.com')\r",
+									"\r",
+									"    let tokenVar = collection.variable.find(variable => { return variable.key === 'token'})\r",
+									"    pm.expect(tokenVar.key, 'check token variable set').to.equal('token')\r",
+									"\r",
+									"    let idVar = collection.variable.find(variable => { return variable.key === 'id'})\r",
+									"    pm.expect(idVar.key, 'check id variable set').to.equal('id')\r",
+									"    \r",
+									"    pass += 1\r",
+									"})\r",
+									"\r",
+									"pm.test(\"Tests added correctly\", () => {\r",
+									"    let scenarioFolder = collection.item.find(fol => { return fol.name === \"Scenario testing\"})\r",
+									"    let newMovieFolder = scenarioFolder.item.find(fol => { return fol.name === \"Create new movie\" })\r",
+									"\r",
+									"    let firstRequest = newMovieFolder.item.find(req => { return req.name === \"Movie create endpoint\" | req.name === \"Movie create endpoint Copy\"})\r",
+									"    let firstTest = firstRequest.event.find(event => {return event.listen === \"test\"})\r",
+									"    pm.expect(firstTest.script.exec.toString(), 'check first test').to.include(\"pm.test\")\r",
+									"\r",
+									"    let secondRequest = newMovieFolder.item.find(req => { return req.name === \"Movie read endpoint\" | req.name === \"Movie read endpoint Copy\"})\r",
+									"    let secondTest = secondRequest.event.find(event => {return event.listen === \"test\"})\r",
+									"    pm.expect(secondTest.script.exec.toString(), 'check second test').to.include(\"pm.test\")\r",
+									"\r",
+									"    let thirdRequest = newMovieFolder.item.find(req => { return req.name === \"All movies read endpoint\" | req.name === \"All movies read endpoint Copy\"})\r",
+									"    let thirdTest = thirdRequest.event.find(event => {return event.listen === \"test\"})\r",
+									"    pm.expect(thirdTest.script.exec.toString(), 'check third test').to.include(\"pm.test\")\r",
+									"\r",
+									"    let fourthRequest = newMovieFolder.item.find(req => { return req.name === \"Movie delete endpoint\" | req.name === \"Movie delete endpoint Copy\"})\r",
+									"    let fourthTest = fourthRequest.event.find(event => {return event.listen === \"test\"})\r",
+									"    pm.expect(fourthTest.script.exec.toString(), 'check fourth test').to.include(\"pm.test\")\r",
+									"\r",
+									"    // TODO add more variable usage tests\r",
+									"\r",
+									"    pass += 1\r",
+									"})\r",
+									"\r",
+									"// visualization for test results\r",
+									"let template\r",
+									"if (pass == totalToPass) {\r",
+									"    template = `🍪 passing!\r",
+									"        <br />\r",
+									"        <img src=\"https://media0.giphy.com/media/i38CnPRuM7OqA/giphy.gif?cid=ecf05e47c6twexhj3sivdu9f2sgyaz4mqrfvi9mhgfoek73d&rid=giphy.gif&ct=g\" />\r",
+									"    `\r",
+									"} else {\r",
+									"    template = `🙅 please try again\r",
+									"        <br />\r",
+									"        <img src=\"https://media4.giphy.com/media/1gdie6tuheZwGlnfwj/giphy.gif?cid=ecf05e47zzsolbpfh0h1mp0ypnqlvuzc2xtodaprxs4yrk4p&rid=giphy.gif&ct=g\" />\r",
+									"    `\r",
+									"}\r",
+									"pm.visualizer.set(template)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-api-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{postman_api_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{postman_api_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.getpostman.com/collections/{{collection_uid}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"getpostman",
+								"com"
+							],
+							"path": [
+								"collections",
+								"{{collection_uid}}"
+							]
+						},
+						"description": "It's time to submit your solution.\n\n1. **Use a Postman environment:** Find the `Postman API env` environment from the previous challenge. Update the `collection_uid` with the current collection's ID.\n1. **Validate your solution**: Save your changes in the collection and environment. Hit **Send** and look under the **Tests** tab of the server response at the bottom to review your test results.\n\nIf you have any failures, review the failed test results or ask for support in the [community forum](https://community.postman.com/). When all of your tests pass, you are done with today's challenge. Remember to save your changes as you'll need to pass all the challenges to claim a **30 days of Postman** badge."
+					},
+					"response": []
+				}
+			],
+			"description": "Follow the instructions in the request documentation."
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://www.unbreakableapi.com"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjI1LCJyb2xlIjoiZW1wbG95ZWUifQ.DZ9LeRfHHDQtiJYiV1gmJMW_h3yHAXMnHJdx1KUjLnQ"
+		},
+		{
+			"key": "id",
+			"value": ""
+		}
+	]
+}
