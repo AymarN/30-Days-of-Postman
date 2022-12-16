@@ -205,14 +205,6 @@ jobs:
           collection: ./'Day25 Dynamic request bodies'/'25Dynamic request bodies.postman_collection.json'
           environment: ./'Day25 Dynamic request bodies'/25Environment.postman_environment.json
 
-      - run:
-          name: Day26_Collection
-          command: 
-            echo "Run Day26 Collection"
-
-      - newman/newman-run:
-          collection: ./'Day26 Parse HTML response'/'26Parse HTML response.postman_collection.json'
-          environment: ./'Day26 Parse HTML response'/26Environment.postman_environment.json
 
   test:
     executor: node/default
