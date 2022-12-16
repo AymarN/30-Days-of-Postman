@@ -1,0 +1,390 @@
+{
+	"info": {
+		"_postman_id": "f12ea676-157a-4c6c-ba2a-f59d8bd6dea0",
+		"name": "Day 12: Postman API",
+		"description": "## Instructions for Day 12: Postman API\n\n1. **Get the challenge:** Fork [the parent collection `Day 12: Postman API`](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-2f4b05dd-10d6-4f0b-8844-b9e8679881d6) to your own public workspace.\n2. **Read the documentation:** In your fork, select the first folder. Expand the context bar on the right to follow the instructions in the collection documentation.\n3. **Submit your solution:** Select the second folder `Submit your solution` and follow the instructions in the documentation to validate your solution.\n\n## Concepts covered\n- [Postman API](https://learning.postman.com/docs/developer/intro-api/)\n\n## Additional resources\n- [Postman API](https://www.postman.com/postman/workspace/postman-public-workspace/documentation/12959542-c8142d51-e97c-46b6-bd77-52bb66712c9a) documentation collection\n- [How to Get Started With the Postman API](https://blog.postman.com/how-to-get-started-with-the-postman-api/) blog\n\n## Next challenge\n\n- [Newman](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-a509b7b4-4b46-4593-9dec-2bafbe7d9524)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10921002"
+	},
+	"item": [
+		{
+			"name": "Postman API",
+			"item": [
+				{
+					"name": "get single collection",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Day 12 Postman API Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{30DaysMigration_Key}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "x-api-key",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.getpostman.com/collections/{{collection_uid}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"getpostman",
+								"com"
+							],
+							"path": [
+								"collections",
+								"{{collection_uid}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single environment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Day 12 Get environment Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{30DaysMigration_Key}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "x-api-key",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.getpostman.com/environments/{{environment_uid}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"getpostman",
+								"com"
+							],
+							"path": [
+								"environments",
+								"{{environment_uid}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single workspace",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Day 12 Get Workspace Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{30DaysMigration_Key}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "x-api-key",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.getpostman.com/workspaces/{{workspace_id}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"getpostman",
+								"com"
+							],
+							"path": [
+								"workspaces",
+								"{{workspace_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "It's time to work on your next challenge.\n\n1. **Fork the collection**: If you haven't already, fork [the parent collection for the Postman API](https://www.postman.com/postman/workspace/postman-public-workspace/documentation/12959542-c8142d51-e97c-46b6-bd77-52bb66712c9a) into your own workspace. We've already used the Postman API in previous challenges to check our solutions. Let's learn more about it.\n1. **Add three requests**: In the Postman API collection, find these requests to add a copy to the folder `Postman API`.\n  - Add a request to get a single collection, call it `get single collection`\n  - Add a request to get a single environment, call it `get single environment`\n  - Add a request to get a single workspace, call it `get single workspace`\n  - Add a collection-level authorization helper [to add an API key](https://learning.postman.com/docs/sending-requests/authorization/#api-key) like `x-api-key` and <code>\\{{postman_api_key\\}}</code> to your request headers.\n1. **Create an environment**: [Create a new environment](https://learning.postman.com/docs/sending-requests/managing-environments/#creating-environments) called `Postman API env`. Add the following environment variables:\n  - `collection_uid` with the collection id for `Day 12: Postman API`\n  - `environment_uid` with the environment id for `Postman API env`\n  - `workspace_id` with the workspace id for your current workspace; you may need to do some research on this one\n  - `postman_api_key` with your [Postman API key](https://go.postman.co/settings/me/api-keys)\n  > ⚠ **Remember to only use `CURRENT VALUE` for sensitive tokens like your API key**\n\n  Send the requests to ensure you get successful responses, and save your changes. \n\nThe Postman API allows you to build integrations to suit your particular workflows. You can script a solution to retrieve all the collections in this workspace, and run all the collections along with the associated tests, as part of your CI/CD pipeline or for periodic health checks, for example.\n\nOnce you complete these steps, move on to the next folder in this collection to submit your solution. Follow the instructions in the request documentation.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Submit your solution",
+			"item": [
+				{
+					"name": "submit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let res = pm.response.json()\r",
+									"\r",
+									"// counter for passed tests\r",
+									"let pass = 0\r",
+									"let totalToPass = 5\r",
+									"\r",
+									"pm.test(\"If you have any failures, review the failed test results or ask for support in the community forum. Remember to save your changes if you update the collection. When all of your tests pass, you are done with today's challenge.\", () => {\r",
+									"    pm.expect(true);\r",
+									"    pass += 1\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code is 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pass += 1\r",
+									"});\r",
+									"\r",
+									"const collRequest = {\r",
+									"  url: `https://api.getpostman.com/collections/${res.form.collection_uid}`,\r",
+									"  method: 'GET',\r",
+									"  header: {\r",
+									"    'x-api-key': `${res.headers[\"x-api-key\"]}`\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"pm.sendRequest(collRequest, (error, response) => {\r",
+									"  if (error) {\r",
+									"    console.log(error);\r",
+									"  }\r",
+									"\r",
+									"  pm.test('get single collection', () => {\r",
+									"    pm.expect(error).to.equal(null);\r",
+									"    pm.expect(response).to.have.property('code', 200);\r",
+									"    pm.expect(response).to.have.property('status', 'OK');\r",
+									"    pm.expect(response.json().collection.auth.type, 'check collection authorization').to.equal(\"apikey\")\r",
+									"\r",
+									"    pass += 1\r",
+									"  });\r",
+									"});\r",
+									"\r",
+									"const envRequest = {\r",
+									"  url: `https://api.getpostman.com/environments/${res.form.environment_uid}`,\r",
+									"  method: 'GET',\r",
+									"  header: {\r",
+									"    'x-api-key': `${res.headers[\"x-api-key\"]}`\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"pm.sendRequest(envRequest, (error, response) => {\r",
+									"  if (error) {\r",
+									"    console.log(error);\r",
+									"  }\r",
+									"\r",
+									"  pm.test('get single environment', () => {\r",
+									"    pm.expect(error).to.equal(null);\r",
+									"    pm.expect(response).to.have.property('code', 200);\r",
+									"    pm.expect(response).to.have.property('status', 'OK');\r",
+									"    pm.expect(response.json().environment.values.length, 'check environment variables').to.equal(4)\r",
+									"\r",
+									"    pass += 1\r",
+									"  });\r",
+									"});\r",
+									"\r",
+									"const workRequest = {\r",
+									"  url: `https://api.getpostman.com/workspaces/${res.form.workspace_id}`,\r",
+									"  method: 'GET',\r",
+									"  header: {\r",
+									"    'x-api-key': `${res.headers[\"x-api-key\"]}`\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"pm.sendRequest(workRequest, (error, response) => {\r",
+									"  if (error) {\r",
+									"    console.log(error);\r",
+									"  }\r",
+									"\r",
+									"  pm.test('get single workspace', () => {\r",
+									"    pm.expect(error).to.equal(null);\r",
+									"    pm.expect(response).to.have.property('code', 200);\r",
+									"    pm.expect(response).to.have.property('status', 'OK');\r",
+									"    // pm.expect(response.json().workspace.type, 'check public workspace').equals(\"public\")\r",
+									"\r",
+									"    pass += 1\r",
+									"  });\r",
+									"});\r",
+									"\r",
+									"// visualization for test results\r",
+									"let template\r",
+									"if (pass == totalToPass) {\r",
+									"    template = `🍪 passing!\r",
+									"        <br />\r",
+									"        <img src=\"https://media4.giphy.com/media/gKfNj8cYeGN63bLRkF/giphy.gif?cid=ecf05e47h66ifoa2zze9t2jpukur7nd4h7dzqaq2ab4rt2yi&rid=giphy.gif&ct=g\" />\r",
+									"    `\r",
+									"} else {\r",
+									"    template = `🙅 please try again\r",
+									"        <br />\r",
+									"        <img src=\"https://media1.giphy.com/media/iqzp1pBJtNQUU/giphy.gif?cid=ecf05e47h66ifoa2zze9t2jpukur7nd4h7dzqaq2ab4rt2yi&rid=giphy.gif&ct=g\" />\r",
+									"    `\r",
+									"}\r",
+									"pm.visualizer.set(template)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{30DaysMigration_Key}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "x-api-key",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "collection_uid",
+									"value": "10921002-f12ea676-157a-4c6c-ba2a-f59d8bd6dea0",
+									"type": "text"
+								},
+								{
+									"key": "environment_uid",
+									"value": "10921002-507d7725-14d3-4bd1-8b14-8e618c064f3e",
+									"type": "text"
+								},
+								{
+									"key": "workspace_id",
+									"value": "1672b65b-3d93-44f1-834c-e40b5f76c9be",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://postman-echo.com/post",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"post"
+							]
+						},
+						"description": "It's time to submit your solution.\n\n1. **Get the collection ID:** Get the collection `ID`, and enter it under the **Body** tab as form-data for `collection_uid`.\n1. **Get the environment ID:** Get the environment `ID`, and enter it under the **Body** tab as form-data for `environment_uid`.\n1. **Get the workspace ID:** Get the workspace id, and enter it under the **Body** tab as form-data for `workspace_id`.\n1. **Validate your solution**: Save your changes in the collection and environment. Hit **Send** and look under the **Tests** tab of the server response at the bottom to review your test results.\n\nIf you have any failures, review the failed test results or ask for support in the [community forum](https://community.postman.com/). When all of your tests pass, you are done with today's challenge. Remember to save your changes as you'll need to pass all the challenges to claim a **30 days of Postman** badge."
+					},
+					"response": []
+				}
+			],
+			"description": "Follow the instructions in the request documentation."
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{30DaysMigration_Key}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "x-api-key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

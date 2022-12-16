@@ -1,0 +1,311 @@
+{
+	"info": {
+		"_postman_id": "3a54a8dc-16b9-4e55-b4b4-5ca267a1895b",
+		"name": "Day 20: Documentation",
+		"description": "## Instructions for Day 20: Documentation\n\n1. **Get the challenge:** Fork [the parent collection `Day 20: Documentation`](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-0f00502d-d2d8-45fc-bd69-0fbb68eb5733) from the main workspace to your own public workspace.\n2. **Read the documentation:** In your fork, select the first folder. Expand the context bar on the right to follow the instructions in the collection documentation.\n3. **Submit your solution:** Select the second folder `Submit your solution` and follow the instructions in the documentation to validate your solution.\n\n## Concepts covered\n- [Documenting your API](https://learning.postman.com/docs/publishing-your-api/documenting-your-api/)\n\n## Additional resources\n- [The Good Documentation checklist](https://blog.postman.com/postman-good-documentation-checklist/)\n- [The Ultimate API Publisher's Guide](https://medium.com/better-practices/the-ultimate-api-publishers-guide-be74a2692326)\n\n## Next challenge\n\n- [Versioning](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-8b2c3197-1df3-44ba-9687-eba60470d270)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10921002"
+	},
+	"item": [
+		{
+			"name": "Documentation",
+			"item": [
+				{
+					"name": "Send a POST Request with httpbin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Day 20 Documentation Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"var args = jsonData.args;\r",
+									"\r",
+									"pm.test(\"Your test name\", function () {\r",
+									"    pm.expect(args.bar).to.eql(\"foo\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{postman_api_key}}",
+								"description": "Postman API key was used",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    data: \"sendit\"\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://httpbin.org/post?bar=foo",
+							"protocol": "https",
+							"host": [
+								"httpbin",
+								"org"
+							],
+							"path": [
+								"post"
+							],
+							"query": [
+								{
+									"key": "bar",
+									"value": "foo",
+									"description": "optional parameters"
+								}
+							]
+						},
+						"description": "Send an httpbin Post request.\n- [Documentation here](https://httpbin.org/)"
+					},
+					"response": [
+						{
+							"name": "Send a POST Request with httpbin",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://httpbin.org/post?",
+									"protocol": "https",
+									"host": [
+										"httpbin",
+										"org"
+									],
+									"path": [
+										"post"
+									],
+									"query": [
+										{
+											"key": null,
+											"value": null,
+											"description": "No key or token needed"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 20 Jun 2021 03:23:37 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "498"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "gunicorn/19.9.0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"args\": {},\n    \"data\": \"\",\n    \"files\": {},\n    \"form\": {},\n    \"headers\": {\n        \"Accept\": \"*/*\",\n        \"Accept-Encoding\": \"gzip, deflate, br\",\n        \"Cache-Control\": \"no-cache\",\n        \"Content-Length\": \"0\",\n        \"Host\": \"httpbin.org\",\n        \"Postman-Token\": \"7fa72129-3f15-4d38-b15c-53ec466b997c\",\n        \"User-Agent\": \"PostmanRuntime/7.28.0\",\n        \"X-Amzn-Trace-Id\": \"Root=1-60ceb4b9-7156ed7126ea74e70fc68f0e\"\n    },\n    \"json\": null,\n    \"origin\": \"172.93.177.93\",\n    \"url\": \"https://httpbin.org/post\"\n}"
+						}
+					]
+				}
+			],
+			"description": "It's time to work on your next challenge.\n\n1. **Document a request**: Add a single request to the folder `Documentation`. It can be a request from an API we've used previously or any API that you like. \n\n You've been reading the documentation for instructions on each of these challenges thus far. These [descriptions](https://learning.postman.com/docs/publishing-your-api/authoring-your-documentation/#documenting-with-descriptions) provide more information about a collection, folder, request, parameter, or header and are [formatted in Markdown](https://learning.postman.com/docs/publishing-your-api/authoring-your-documentation/#markdown-demo-collection). Include the following to explain how to use the endpoint:\n  - Request description formatted in Markdown\n  - Include at least one hyperlink to official documentation in the request description\n  - Parameter description if you add any parameters\n  - Header description if you add any headers\n  - Save a successful response from the server as [an example](https://learning.postman.com/docs/sending-requests/examples/#response-from-the-server)\n\n1. **Optional enhancements**: If it will help the user better understand how to use the endpoint, include the following (optional):\n  - [Visualize](https://learning.postman.com/docs/sending-requests/visualizer/) the response to help the user interpret the data\n  - [Test](https://learning.postman.com/docs/writing-scripts/test-scripts/) to aid users who experience unexpected errors\n  - Screenshot to aid users, for example, showing users where to get an API key\n  - More examples demonstrating an unsuccessful response and other scenarios\n  - **Do not to leak any secrets!** \n\n  Send your request to ensure a successful response and save your changes.\n\nOnce you complete these steps, move on to the next folder in this collection to submit your solution. Follow the instructions in the request documentation.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Submit your solution",
+			"item": [
+				{
+					"name": "submit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// counter for passed tests\r",
+									"let pass = 0\r",
+									"let totalToPass = 5\r",
+									"\r",
+									"let collection = pm.response.json().collection\r",
+									"\r",
+									"pm.test(\"If you have any failures, review the failed test results or ask for support in the community forum. Remember to save your changes if you update the collection. When all of your tests pass, you are done with today's challenge.\", () => {\r",
+									"    pm.expect(true);\r",
+									"    pass += 1\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code is 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pass += 1\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct collection returned\", () => {\r",
+									"    pm.expect(collection.info.name).equals(\"Day 20: Documentation\")\r",
+									"    pass += 1\r",
+									"})\r",
+									"\r",
+									"pm.test(\"Request added correctly\", () => {\r",
+									"    pm.expect(collection.item[0].item.length, 'check number of requests').is.greaterThan(0)\r",
+									"\r",
+									"    pass += 1\r",
+									"})\r",
+									"\r",
+									"pm.test(\"Documentation added correctly\", () => {\r",
+									"    let firstRequest = collection.item[0].item[0]\r",
+									"\r",
+									"    pm.expect(firstRequest.request.description, 'check request description').to.exist\r",
+									"    let firstMarkdownLinkRegex = /\\[(.+)\\]\\((.+)\\)/\r",
+									"    pm.expect(firstRequest.request.description.match(firstMarkdownLinkRegex).length, 'check hyperlink').to.equal(3)\r",
+									"\r",
+									"    if (firstRequest.request.url.query) {\r",
+									"        firstRequest.request.url.query.forEach( (param) => {\r",
+									"            pm.expect(param.description, 'check param description').to.exist\r",
+									"        })\r",
+									"        pm.expect(firstRequest.request.url.query.forEach( (param) => { param.description}))\r",
+									"    }\r",
+									"\r",
+									"    if (firstRequest.request.header) {\r",
+									"        firstRequest.request.header.forEach( (header) => {\r",
+									"            pm.expect(header.description, 'check header description').to.exist\r",
+									"        })\r",
+									"    }\r",
+									"\r",
+									"    pm.expect(firstRequest.response, 'check saved example').to.not.be.empty\r",
+									"\r",
+									"    pass += 1\r",
+									"})\r",
+									"\r",
+									"// visualization for test results\r",
+									"let template\r",
+									"if (pass == totalToPass) {\r",
+									"    template = `🍪 passing!\r",
+									"        <br />\r",
+									"        <img src=\"https://media1.giphy.com/media/c5eqVJN7oNLTq/giphy.gif?cid=ecf05e47ipdv9pm2ugb4rtqppcg4f291wve7s75ha1xocqhl&rid=giphy.gif&ct=g\" />\r",
+									"    `\r",
+									"} else {\r",
+									"    template = `🙅 please try again\r",
+									"        <br />\r",
+									"        <img src=\"https://media3.giphy.com/media/V6vNqIGP1RiMEwmMGV/giphy.gif?cid=ecf05e47dcpl5voxfkaw0l814ohtu15kcyvfe5x9lvyvc0sq&rid=giphy.gif&ct=g\" />\r",
+									"    `\r",
+									"}\r",
+									"pm.visualizer.set(template)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{postman_api_key}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "x-api-key",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{postman_api_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.getpostman.com/collections/{{collection_uid}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"getpostman",
+								"com"
+							],
+							"path": [
+								"collections",
+								"{{collection_uid}}"
+							]
+						},
+						"description": "It's time to submit your solution.\n\n1. **Use a Postman environment:** Find the `Postman API env` environment from the previous challenge. Update the `collection_uid` with the current collection's ID.\n1. **Validate your solution**: Save your changes in the collection and environment. Hit **Send** and look under the **Tests** tab of the server response at the bottom to review your test results.\n\nIf you have any failures, review the failed test results or ask for support in the [community forum](https://community.postman.com/). When all of your tests pass, you are done with today's challenge. Remember to save your changes as you'll need to pass all the challenges to claim a **30 days of Postman** badge."
+					},
+					"response": []
+				}
+			],
+			"description": "Follow the instructions in the request documentation."
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
