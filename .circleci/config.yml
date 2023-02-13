@@ -229,7 +229,7 @@ jobs:
     steps:
       - checkout
       - install-node
-      - install-npm
+      #- install-npm
       - run: npm --version
       - restore_cache:
           key: newman--{{ checksum "package-lock.json" }}
@@ -256,15 +256,15 @@ workflows:
   build_test_and_deploy:
     jobs:
       - build
-      #- test:
-          #requires:
-          #  - build
-          #filters:
-          #  branches:
-          #   only: main
+      - test:
+          requires:
+            - build
+          filters:
+            branches:
+             only: main
       - deploy:
-          #requires:
-          #  - test 
+          requires:
+            - test 
           filters:
             branches:
               only: main
