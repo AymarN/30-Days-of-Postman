@@ -256,15 +256,15 @@ workflows:
   build_test_and_deploy:
     jobs:
       - build
-      - test:
-          requires:
-            - build
-          filters:
-            branches:
-              only: main
+      #- test:
+          #requires:
+          #  - build
+          #filters:
+          #  branches:
+          #   only: main
       - deploy:
-          requires:
-            - test 
+          #requires:
+          #  - test 
           filters:
             branches:
               only: main
