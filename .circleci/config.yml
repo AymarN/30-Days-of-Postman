@@ -3,7 +3,7 @@
 version: 2.1
 
 orbs:
-  newman: postman/newman@1.0.0
+  newman: postman/newman@1.2.3
   win: circleci/windows@5.0
   node: circleci/node@5.0.3
 
