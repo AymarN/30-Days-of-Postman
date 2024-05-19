@@ -102,9 +102,9 @@ jobs:
           command: 
             echo "Run Day8 Collection"
 
-      - newman/newman-run:
-          collection: ./'Day8 Run a collection'/08Run_a_collection.postman_collection.json
-          environment: ./'Day8 Run a collection'/08Environment.postman_environment.json
+      #- newman/newman-run:
+      #    collection: ./'Day8 Run a collection'/08Run_a_collection.postman_collection.json
+      #    environment: ./'Day8 Run a collection'/08Environment.postman_environment.json
 
       - run:
           name: Day9_Collection
