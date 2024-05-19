@@ -93,9 +93,9 @@ jobs:
           command: 
             echo "Run Day7 Collection"
 
-      - newman/newman-run:
-          collection: ./Day7Debugging/07Debugging.postman_collection.json
-          environment: ./Day7Debugging/07Environment.postman_environment.json
+    #  - newman/newman-run:
+    #      collection: ./Day7Debugging/07Debugging.postman_collection.json
+    #      environment: ./Day7Debugging/07Environment.postman_environment.json
 
       - run:
           name: Day8_Collection
