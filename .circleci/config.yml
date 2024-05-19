@@ -120,9 +120,9 @@ jobs:
           command: 
             echo "Run Day10 Collection"
 
-      - newman/newman-run:
-          collection: ./'Day10 Mock services'/10Mock_services.postman_collection.json
-          environment: ./'Day10 Mock services'/10Environment.postman_environment.json
+      #- newman/newman-run:
+      #    collection: ./'Day10 Mock services'/10Mock_services.postman_collection.json
+      #    environment: ./'Day10 Mock services'/10Environment.postman_environment.json
           
       - run:
           name: Day11_Collection
