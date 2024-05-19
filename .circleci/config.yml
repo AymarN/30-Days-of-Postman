@@ -183,9 +183,9 @@ jobs:
           command: 
             echo "Run Day20 Collection"
 
-      - newman/newman-run:
-          collection: ./'Day20 Documentation'/20Documentation.postman_collection.json
-          environment: ./'Day20 Documentation'/20Environment.postman_environment.json
+      #- newman/newman-run:
+      #    collection: ./'Day20 Documentation'/20Documentation.postman_collection.json
+      #    environment: ./'Day20 Documentation'/20Environment.postman_environment.json
           
       #- run:
       #    name: Day24_Collection
