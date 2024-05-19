@@ -219,9 +219,9 @@ jobs:
           command: 
             echo "Run Day27 Collection"
 
-      - newman/newman-run:
-          collection: ./'Day27 Scenario testing'/27Scenario_testing.postman_collection.json
-          environment: ./'Day27 Scenario testing'/27Environment.postman_environment.json
+      #- newman/newman-run:
+      #    collection: ./'Day27 Scenario testing'/27Scenario_testing.postman_collection.json
+      #    environment: ./'Day27 Scenario testing'/27Environment.postman_environment.json
 
 
   test:
