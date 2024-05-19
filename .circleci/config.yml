@@ -111,9 +111,9 @@ jobs:
           command: 
             echo "Run Day9 Collection"
 
-      - newman/newman-run:
-          collection: ./'Day9 Scripting'/09Scripting.postman_collection.json
-          environment: ./'Day9 Scripting'/09Environment.postman_environment.json
+      #- newman/newman-run:
+      #    collection: ./'Day9 Scripting'/09Scripting.postman_collection.json
+      #    environment: ./'Day9 Scripting'/09Environment.postman_environment.json
 
       - run:
           name: Day10_Collection
