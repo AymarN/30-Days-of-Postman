@@ -210,9 +210,9 @@ jobs:
           command: 
             echo "Run Day26 Collection"
 
-      - newman/newman-run:
-          collection: ./'Day26 Parse HTML response'/26Parse_HTML_response.postman_collection.json
-          environment: ./'Day26 Parse HTML response'/26Environment.postman_environment.json
+      #- newman/newman-run:
+      #    collection: ./'Day26 Parse HTML response'/26Parse_HTML_response.postman_collection.json
+      #    environment: ./'Day26 Parse HTML response'/26Environment.postman_environment.json
 
       - run:
           name: Day27_Collection
