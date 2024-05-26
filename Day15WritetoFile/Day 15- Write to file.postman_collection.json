@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "fc900773-c1c9-47c8-aaac-028abab337f6",
+		"_postman_id": "29939490-a470-4d02-80cc-2e0496b852a5",
 		"name": "Day 15: Write to file",
 		"description": "## Instructions for Day 15: Write to file\n\n1. **Get the challenge:** Fork [the parent collection `Day 15: Write to file`](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-b9204eb2-a00b-46b5-b011-89375b39d28b) from the main workspace to your own public workspace.\n2. **Read the documentation:** In your fork, select the first folder. Expand the context bar on the right to follow the instructions in the collection documentation.\n3. **Submit your solution:** Select the second folder `Submit your solution` and follow the instructions in the documentation to validate your solution.\n\n## Concepts covered\n- [`pm.sendRequest()`](https://learning.postman.com/docs/writing-scripts/script-references/postman-sandbox-api-reference/#sending-requests-from-scripts) to send asynchronous requests\n- [Write to your local file system using a Postman Collection](https://blog.postman.com/write-to-your-local-file-system-using-a-postman-collection/) blog\n\n## Additional resources\n- [Newman write to file](https://github.com/postmanlabs/postman-app-support/issues/3033#issuecomment-301758179) code sample\n- [Write responses to file](https://www.postman.com/postman/workspace/postman-answers/collection/3407886-888860dd-9e3c-4537-a78e-1c3f3db7535c?ctx=documentation) template\n\n## Next challenge\n\n- [Pagination](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-e8bb1023-b130-4c60-a8d6-6d983b5b9613)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "10921002"
+		"_exporter_id": "25532057"
 	},
 	"item": [
 		{
@@ -172,8 +172,7 @@
 						"header": [
 							{
 								"key": "x-api-key",
-								"value": "{{postman_api_key}}",
-								"type": "text"
+								"value": "{{postman_api_key}}"
 							}
 						],
 						"url": {
