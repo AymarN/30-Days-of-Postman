@@ -45,9 +45,7 @@ jobs:
              npm install -g newman
              echo " newman was set up"
              newman --version
-             echo "Let us move to the newman folder"
-      #      mkdir newman
-      #      ls -a .
+             
 
              
       - run:
@@ -163,8 +161,8 @@ jobs:
               echo "Let us look up files"
               pwd
 
-      #        newman run ./Day15WritetoFile/15WritetoFile.postman_collection.json -e ./Day15WritetoFile/"Postman API Env Day 15.postman_environment.json" \
-      #         -d ./Day15WritetoFile/script.js  -n 1 
+              newman run /root/project/Day15WritetoFile/15WritetoFile.postman_collection.json -e /root/project/Day15WritetoFile/"Postman API Env Day 15.postman_environment.json" \
+               -r cli -d /root/project/Day15WritetoFile/script.js  -n 1 
 
       #       cd ~/project/newman
               
