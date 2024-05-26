@@ -19,7 +19,7 @@ commands:
   install-npm:
     steps:
       - checkout
-      - run: sudo npm install npm@latest
+      - run: npm install npm@latest
       - node/install-packages:
           cache-path: ~/project/node_modules
           
@@ -42,10 +42,10 @@ jobs:
       - checkout
 
       - run: |
-             sudo npm install -g npm@latest
+             npm install -g npm@latest
              echo "npm modules was installed"
-             sudo npm install -g newman
-             sudo npm install -g newman-reporter-htmlextra
+             npm install -g newman
+             npm install -g newman-reporter-htmlextra
 
              echo " newman was set up"
              newman --version
