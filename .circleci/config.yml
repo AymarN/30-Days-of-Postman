@@ -40,6 +40,20 @@ jobs:
     executor: newman/postman-newman-docker
     steps:
       - checkout
+
+      - run: |
+             sudo npm install -g npm@latest
+             echo "npm modules was installed"
+             sudo npm install -g newman
+             sudo npm install -g newman-reporter-htmlextra
+
+             echo " newman was set up"
+             newman --version
+             echo "Let us move to the newman folder"
+             mkdir newman
+             ls -a .
+
+             
       - run:
           name: Day2_Collection
           command: 
@@ -81,9 +95,9 @@ jobs:
           command: 
             echo "Run Day7 Collection"
 
-    #  - newman/newman-run:
-    #      collection: ./Day7Debugging/07Debugging.postman_collection.json
-    #      environment: ./Day7Debugging/07Environment.postman_environment.json
+      - newman/newman-run:
+          collection: ./Day7Debugging/"Day 07- Debugging.postman_collection.json"
+          environment: ./Day7Debugging/"Day 07 Environment.postman_environment.json"
 
       - run:
           name: Day8_Collection
