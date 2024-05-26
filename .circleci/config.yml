@@ -42,8 +42,6 @@ jobs:
       - checkout
 
       - run: |
-             npm install -g npm@latest
-             echo "npm modules was installed"
              npm install -g newman
              npm install -g newman-reporter-htmlextra
 
