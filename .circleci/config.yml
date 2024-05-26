@@ -163,7 +163,7 @@ jobs:
               echo "Let us look up files"
               cd ~/project/newman
 
-              newman run ../Day15WritetoFile/15WritetoFile.postman_collection.json -e "../Day15WritetoFile/"Postman API Env Day 15.postman_environment.json" \
+              newman run ../Day15WritetoFile/15WritetoFile.postman_collection.json -e ../Day15WritetoFile/"Postman API Env Day 15.postman_environment.json" \
               --working-dir newman -d ../Day15WritetoFile/script.js  -n 1 
               
              
