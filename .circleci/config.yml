@@ -161,7 +161,7 @@ jobs:
               echo "Let us look up files"
               pwd
 
-              newman run Day15WritetoFile/15WritetoFile.postman_collection.json -e Day15WritetoFile/"Postman API Env Day 15.postman_environment.json" \
+              newman run Day15WritetoFile/"Day 15- Write to file.postman_collection.json" -e Day15WritetoFile/"Postman API Env Day 15.postman_environment.json" \
                -r cli, json --working-dir /root/project -d Day15WritetoFile/script.js  -n 1 
 
       #       cd ~/project/newman
