@@ -46,8 +46,8 @@ jobs:
              echo " newman was set up"
              newman --version
              echo "Let us move to the newman folder"
-             mkdir newman
-             ls -a .
+      #      mkdir newman
+      #      ls -a .
 
              
       - run:
@@ -161,10 +161,11 @@ jobs:
       - run: |
               echo " Let us run Day 15"
               echo "Let us look up files"
-              cd ~/project/newman
 
-              newman run ../Day15WritetoFile/15WritetoFile.postman_collection.json -e ../Day15WritetoFile/"Postman API Env Day 15.postman_environment.json" \
-              --working-dir newman -d ../Day15WritetoFile/script.js  -n 1 
+              newman run Day15WritetoFile/15WritetoFile.postman_collection.json -e Day15WritetoFile/"Postman API Env Day 15.postman_environment.json" \
+               -d Day15WritetoFile/script.js  -n 1 
+
+      #       cd ~/project/newman
               
              
       - run:
