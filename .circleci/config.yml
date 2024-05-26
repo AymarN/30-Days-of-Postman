@@ -43,8 +43,6 @@ jobs:
 
       - run: |
              npm install -g newman
-             npm install -g newman-reporter-htmlextra
-
              echo " newman was set up"
              newman --version
              echo "Let us move to the newman folder"
@@ -159,7 +157,16 @@ jobs:
       #- newman/newman-run:
           #collection: ./'Day10 Mock services'/10Mock_services.postman_collection.json
           #environment: ./'Day10 Mock services'/10Environment.postman_environment.json
+          
+      - run: |
+              echo " Let us run Day 15"
+              echo "Let us look up files"
+              cd ~/project/newman
 
+              newman run ../Day15WritetoFile/15WritetoFile.postman_collection.json -e ../Day15WritetoFile/15Environment.postman_environment.json \
+              --working-dir newman -d ../Day15WritetoFile/script.js  -n 1 
+              
+             
       - run:
           name: Day17_Collection
           command: 
