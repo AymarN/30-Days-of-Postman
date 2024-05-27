@@ -17,7 +17,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.sendRequest({\r",
+									"/* pm.sendRequest({\r",
 									" url: 'http://localhost:3000/launches',\r",
 									" method: 'POST',\r",
 									" header: 'Content-Type:application/x-www-form-urlencoded',\r",
@@ -28,12 +28,48 @@
 									"}, function (err, res) {\r",
 									" console.log(res)\r",
 									"})\r",
+									"*/\r",
+									"\r",
+									"var request = {\r",
+									"  url: 'http://localhost:3000/launches',\r",
+									"  method: 'POST',\r",
+									"  header: {\r",
+									"    'Content-Type': 'application/x-www-form-urlencoded'} ,\r",
+									"  body: {\r",
+									"    mode: 'urlencoded',\r",
+									"    urlencoded: `payload=${pm.response.text()}`\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"/* pm.sendRequest(request, (error, response) => {\r",
+									"  console.log(error ? error : response.json());\r",
+									"});\r",
+									" */\r",
+									"\r",
+									"pm.sendRequest(request, (error, response) => {\r",
+									"  if (error) {\r",
+									"    console.error(error);\r",
+									"  } else {\r",
+									"    console.log(response.json());\r",
+									"  }\r",
+									"});\r",
 									"\r",
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -41,17 +77,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.spacexdata.com/v4/launches/latest",
-							"protocol": "https",
+							"raw": "{{baseURL}}",
 							"host": [
-								"api",
-								"spacexdata",
-								"com"
-							],
-							"path": [
-								"v4",
-								"launches",
-								"latest"
+								"{{baseURL}}"
 							]
 						}
 					},
