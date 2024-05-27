@@ -45,9 +45,7 @@ jobs:
              npm install -g newman
              echo " newman was set up"
              newman --version
-             
-
-             
+                  
       - run:
           name: Day2_Collection
           command: 
@@ -156,17 +154,14 @@ jobs:
           #collection: ./'Day10 Mock services'/10Mock_services.postman_collection.json
           #environment: ./'Day10 Mock services'/10Environment.postman_environment.json
           
-      - run: |
-              echo " Let us run Day 15"
-              echo "Let us look up files"
-              pwd
+      #- run: |
+      #        echo " Let us run Day 15"
+      #        echo "Let us look up files"
+      #        pwd
 
-              newman run Day15WritetoFile/"Day 15- Write to file.postman_collection.json" -e Day15WritetoFile/"Postman API Env Day 15.postman_environment.json" \
-              -r cli, json --working-dir /root/project -d Day15WritetoFile/script.js  -n 1 
+      #        newman run Day15WritetoFile/"Day 15- Write to file.postman_collection.json" -e Day15WritetoFile/"Postman API Env Day 15.postman_environment.json" \
+      #        -r cli, json --working-dir /root/project -d Day15WritetoFile/script.js  -n 1 
 
-    
-              
-             
       - run:
           name: Day17_Collection
           command: 
