@@ -308,7 +308,7 @@ jobs:
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
 
-  01.30_Days_Of_Postman_Orb_Newman:
+  01-30_Days_Of_Postman_Orb_Newman:
     jobs:
       - build
       - test:
@@ -324,7 +324,7 @@ workflows:
             branches:
               only: main
 
-  02.30_Days_Of_Postman_Newman:
+  02-30_Days_Of_Postman_Newman:
     jobs:
       - build-newman
       - test-newman:
