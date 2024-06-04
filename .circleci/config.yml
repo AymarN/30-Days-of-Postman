@@ -217,18 +217,25 @@ jobs:
       #    environment: ./'Day27 Scenario testing'/27Environment.postman_environment.json
 
   build-newman:
-      docker:
-        - image: cimg/base:stable
-      steps:
-        - checkout
-        - node/install:
-            install-yarn: true
-            node-version: '16.13'
-        - run: |
-            node --version
-            npm --version
-            npm install -g newman
-            npm install -g newman-reporter-htmlextra
+    executor: node/default
+    working_directory: /home/circleci/project/
+    steps:
+      - checkout
+      - node/install-packages:
+           pkg-manager: yarn
+
+      # - run:
+      #  command: yarn test
+      #  name: Run tests
+      # - run:
+      #  command: yarn build
+      #  name: Build app
+      # - persist_to_workspace:
+      #     root: ~/project
+      #     paths:
+      #       - .
+
+
 
   test:
     executor: node/default
