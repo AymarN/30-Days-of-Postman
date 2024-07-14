@@ -282,6 +282,14 @@ jobs:
 
               newman run ./'Day11 Monitoring'/11Monitoring.postman_collection.json -e ./'Day11 Monitoring'/11Environment.postman_environment.json \
                -r cli, json
+               
+      - run: |
+              echo "Run the collection and the environment Day 12"
+              echo "Let us look up files"
+              cd ~/project
+
+              newman run ./'Day12 Postman API'/'12Postman API.postman_collection.json' -e ./'Day12 Postman API'/12Environment.postman_environment.json \
+               -r cli, json
 
       #- run: |
               #echo " Let us run Day 15"
