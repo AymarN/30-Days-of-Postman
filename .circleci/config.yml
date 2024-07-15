@@ -135,11 +135,7 @@ jobs:
       #    collection: ./'Day12 Postman API'/'12Postman API.postman_collection.json'
       #    environment: ./'Day12 Postman API'/12Environment.postman_environment.json
           
-     # - run:
-         # name: Day13_Collection
-         # command: 
-         #   echo "Run Day13 Collection"
-
+  
      # - newman/newman-run:
          # collection: ./'Day13 Newman'/13Newman.postman_collection.json
          # environment: ./'Day13 Newman'/13Environment.postman_environment.json
