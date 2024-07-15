@@ -329,6 +329,30 @@ jobs:
 
               newman run ./'Day24 Using libraries'/'24Using libraries.postman_collection.json' -e ./'Day24 Using libraries'/24Environment.postman_environment.json \
                -r cli, json
+               
+      - run: |
+              echo "Run the collection and the environment Day 25"
+              echo "Let us look up files"
+              cd ~/project
+
+              newman run  ./'Day25 Dynamic request bodies'/'25Dynamic request bodies.postman_collection.json' -e ./'Day25 Dynamic request bodies'/25Environment.postman_environment.json\
+               -r cli, json
+
+      - run: |
+              echo "Run the collection and the environment Day 26"
+              echo "Let us look up files"
+              cd ~/project
+
+              newman run ./'Day26 Parse HTML response'/26Parse_HTML_response.postman_collection.json -e ./'Day26 Parse HTML response'/26Environment.postman_environment.json \
+               -r cli, json
+
+      - run: |
+              echo "Run the collection and the environment Day 27"
+              echo "Let us look up files"
+              cd ~/project
+
+              newman run ./'Day27 Scenario testing'/27Scenario_testing.postman_collection.json -e ./'Day27 Scenario testing'/27Environment.postman_environment.json  \
+               -r cli, json
 
               
   deploy:
