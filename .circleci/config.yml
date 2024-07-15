@@ -144,10 +144,6 @@ jobs:
          # collection: ./'Day13 Newman'/13Newman.postman_collection.json
          # environment: ./'Day13 Newman'/13Environment.postman_environment.json
 
-      #- run:
-          #name: Day14_Collection
-          #command: 
-          #  echo "Run Day14 Collection"
 
       #- newman/newman-run:
           #collection: ./'Day10 Mock services'/10Mock_services.postman_collection.json
