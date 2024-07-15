@@ -167,7 +167,7 @@ jobs:
           command: 
             echo "Run Day18 Collection"
 
-      #- newman/newman-run:
+      #- newman/newman
       #    collection: ./'Day18 APISpecifications'/18APISpecifications.postman_collection.json
       #    environment: ./'Day18 APISpecifications'/18Environment.postman_environment.json
 
