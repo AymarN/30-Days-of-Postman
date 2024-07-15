@@ -78,8 +78,8 @@ jobs:
             echo "Run Day5 Collection"
 
       - newman/newman-run:
-          collection: ./'Day5 Variables'/05Environment.postman_environment.json
-          environment: ./'Day5 Variables'/05Variables.postman_collection.json
+          environment: ./'Day5 Variables'/05Environment.postman_environment.json
+          collection: ./'Day5 Variables'/05Variables.postman_collection.json
 
       - run:
           name: Day7_Collection
@@ -249,13 +249,29 @@ jobs:
              echo " newman was set up"
              newman --version
              ls -a .
+             
+      - run: |
+              echo "Run the collection and the environment Day 03"
+              echo "Let us look up files"
+              cd ~/project
+
+              newman run ./'Day3 Add request details'/03Add_Request_details.postman_collection.json  -e ./'Day3 Add request details'/03Environment.postman_environment.json \
+               -r cli, json
+
+      - run: |
+              echo "Run the collection and the environment Day 04"
+              echo "Let us look up files"
+              cd ~/project
+
+              newman run ./'Day4 Authorization'/04Authorization.postman_collection.json  -e ./'Day4 Authorization'/04Environment.postman_environment.json \
+               -r cli, json
 
       - run: |
               echo "Run the collection and the environment Day 05"
               echo "Let us look up files"
               cd ~/project
 
-              newman run ./'Day5 Variables'/05Environment.postman_environment.json -e ./'Day5 Variables'/05Variables.postman_collection.json \
+              newman run ./'Day5 Variables'/05Variables.postman_collection.json  -e ./'Day5 Variables'/05Environment.postman_environment.json \
                -r cli, json
 
       - run: |
