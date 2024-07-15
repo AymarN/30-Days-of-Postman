@@ -135,11 +135,6 @@ jobs:
       #    collection: ./'Day12 Postman API'/'12Postman API.postman_collection.json'
       #    environment: ./'Day12 Postman API'/12Environment.postman_environment.json
           
-     # - run:
-         # name: Day13_Collection
-         # command: 
-         #   echo "Run Day13 Collection"
-
      # - newman/newman-run:
          # collection: ./'Day13 Newman'/13Newman.postman_collection.json
          # environment: ./'Day13 Newman'/13Environment.postman_environment.json
@@ -293,6 +288,22 @@ jobs:
               cd ~/project
 
               newman run ./'Day13 Newman'/13Newman.postman_collection.json -e ./'Day13 Newman'/13Environment.postman_environment.json \
+               -r cli, json
+
+      - run: |
+              echo "Run the collection and the environment Day 17"
+              echo "Let us look up files"
+              cd ~/project
+
+              newman run ./'Day17 Visualizations'/17Visualizations.postman_collection.json -e ./'Day17 Visualizations'/17Environment.postman_environment.json \
+               -r cli, json
+
+      - run: |
+              echo "Run the collection and the environment Day 18"
+              echo "Let us look up files"
+              cd ~/project
+
+              newman run ./'Day18 APISpecifications'/18APISpecifications.postman_collection.json -e ./'Day18 APISpecifications'/18Environment.postman_environment.json \
                -r cli, json
 
       #- run: |
