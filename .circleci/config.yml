@@ -290,6 +290,14 @@ jobs:
               newman run ./'Day13 Newman'/13Newman.postman_collection.json -e ./'Day13 Newman'/13Environment.postman_environment.json \
                -r cli, json
 
+      #- run: |
+              #echo " Let us run Day 15"
+              #echo "Let us look up files"
+              #pwd
+
+              #newman run Day15WritetoFile/"Day 15- Write to file.postman_collection.json" -e Day15WritetoFile/"Postman API Env Day 15.postman_environment.json" \
+              #-r cli, json --working-dir /root/project -d Day15WritetoFile/script.js  -n 1 
+
       - run: |
               echo "Run the collection and the environment Day 17"
               echo "Let us look up files"
@@ -305,14 +313,22 @@ jobs:
 
               newman run ./'Day18 APISpecifications'/18APISpecifications.postman_collection.json -e ./'Day18 APISpecifications'/18Environment.postman_environment.json \
                -r cli, json
+               
+      - run: |
+              echo "Run the collection and the environment Day 20"
+              echo "Let us look up files"
+              cd ~/project
 
-      #- run: |
-              #echo " Let us run Day 15"
-              #echo "Let us look up files"
-              #pwd
+              newman run ./'Day20 Documentation'/20Documentation.postman_collection.json -e ./'Day20 Documentation'/20Environment.postman_environment.json \
+               -r cli, json
 
-              #newman run Day15WritetoFile/"Day 15- Write to file.postman_collection.json" -e Day15WritetoFile/"Postman API Env Day 15.postman_environment.json" \
-              #-r cli, json --working-dir /root/project -d Day15WritetoFile/script.js  -n 1 
+      - run: |
+              echo "Run the collection and the environment Day 24"
+              echo "Let us look up files"
+              cd ~/project
+
+              newman run ./'Day24 Using libraries'/'24Using libraries.postman_collection.json' -e ./'Day24 Using libraries'/24Environment.postman_environment.json \
+               -r cli, json
 
               
   deploy:
