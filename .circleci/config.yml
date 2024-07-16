@@ -251,6 +251,14 @@ jobs:
              ls -a .
              
       - run: |
+              echo "Run the collection and the environment Day 02"
+              echo "Let us look up files"
+              cd ~/project
+
+              newman run ./'Day2 Collections and environments'/02Collections_and_environments.postman_collection.json -e ./'Day2 Collections and environments'/02Environment.postman_environment.json \
+               -r cli, json
+             
+      - run: |
               echo "Run the collection and the environment Day 03"
               echo "Let us look up files"
               cd ~/project
