@@ -281,6 +281,30 @@ jobs:
 
               newman run ./Day7Debugging/"Day 07- Debugging.postman_collection.json" -e ./Day7Debugging/"Day 07 Environment.postman_environment.json" \
                -r cli, json
+               
+      - run: |
+              echo "Run the collection and the environment Day 08"
+              echo "Let us look up files"
+              cd ~/project
+
+              newman run ./'Day8 Run a collection'/08Run_a_collection.postman_collection.json -e ./'Day8 Run a collection'/08Environment.postman_environment.json  \
+               -r cli, json
+
+      - run: |
+              echo "Run the collection and the environment Day 09"
+              echo "Let us look up files"
+              cd ~/project
+
+              newman run ./'Day9 Scripting'/09Scripting.postman_collection.json -e ./'Day9 Scripting'/09Environment.postman_environment.json  \
+               -r cli, json
+
+      - run: |
+              echo "Run the collection and the environment Day 10"
+              echo "Let us look up files"
+              cd ~/project
+
+              newman run ./'Day10 Mock services'/10Mock_services.postman_collection.json -e ./'Day10 Mock services'/10Environment.postman_environment.json \
+               -r cli, json
 
       - run: |
               echo "Run the collection and the environment Day 11"
