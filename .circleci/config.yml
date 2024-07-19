@@ -59,18 +59,18 @@ jobs:
           command: 
             echo "Run Day3 Collection"
 
-      #- newman/newman-run:
-      #    collection: ./'Day3 Add request details'/03Add_Request_details.postman_collection.json
-      #    environment: ./'Day3 Add request details'/03Environment.postman_environment.json
+      - newman/newman-run:
+          collection: ./'Day3 Add request details'/03Add_Request_details.postman_collection.json
+          environment: ./'Day3 Add request details'/03Environment.postman_environment.json
 
       - run:
           name: Day4_Collection
           command: 
             echo "Run Day4 Collection"
 
-      #- newman/newman-run:
-      #    collection: ./'Day4 Authorization'/04Authorization.postman_collection.json
-      #    environment: ./'Day4 Authorization'/04Environment.postman_environment.json
+      - newman/newman-run:
+          collection: ./'Day4 Authorization'/04Authorization.postman_collection.json
+          environment: ./'Day4 Authorization'/04Environment.postman_environment.json
 
       - run:
           name: Day5_Collection
