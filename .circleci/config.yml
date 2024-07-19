@@ -50,9 +50,9 @@ jobs:
           command: 
             echo "Run Day2 Collection"
 
-      #- newman/newman-run:
-      #    collection: ./'Day2 Collections and environments'/02Collections_and_environments.postman_collection.json
-       #   environment: ./'Day2 Collections and environments'/02Environment.postman_environment.json
+      - newman/newman-run:
+          collection: ./'Day2 Collections and environments'/02Collections_and_environments.postman_collection.json
+          environment: ./'Day2 Collections and environments'/02Environment.postman_environment.json
 
       - run:
           name: Day3_Collection
@@ -95,27 +95,27 @@ jobs:
           command: 
             echo "Run Day8 Collection"
 
-      #- newman/newman-run:
-      #    collection: ./'Day8 Run a collection'/08Run_a_collection.postman_collection.json
-      #    environment: ./'Day8 Run a collection'/08Environment.postman_environment.json
+      - newman/newman-run:
+          collection: ./'Day8 Run a collection'/08Run_a_collection.postman_collection.json
+          environment: ./'Day8 Run a collection'/08Environment.postman_environment.json
 
       - run:
           name: Day9_Collection
           command: 
             echo "Run Day9 Collection"
 
-      #- newman/newman-run:
-      #    collection: ./'Day9 Scripting'/09Scripting.postman_collection.json
-      #    environment: ./'Day9 Scripting'/09Environment.postman_environment.json
+      - newman/newman-run:
+          collection: ./'Day9 Scripting'/09Scripting.postman_collection.json
+          environment: ./'Day9 Scripting'/09Environment.postman_environment.json
 
       - run:
           name: Day10_Collection
           command: 
             echo "Run Day10 Collection"
 
-      #- newman/newman-run:
-      #    collection: ./'Day10 Mock services'/10Mock_services.postman_collection.json
-      #    environment: ./'Day10 Mock services'/10Environment.postman_environment.json
+      - newman/newman-run:
+          collection: ./'Day10 Mock services'/10Mock_services.postman_collection.json
+          environment: ./'Day10 Mock services'/10Environment.postman_environment.json
           
       - run:
           name: Day11_Collection
@@ -131,45 +131,45 @@ jobs:
           command: 
             echo "Run Day12 Collection"
 
-      #- newman/newman-run:
-      #    collection: ./'Day12 Postman API'/'12Postman API.postman_collection.json'
-      #    environment: ./'Day12 Postman API'/12Environment.postman_environment.json
+      - newman/newman-run:
+          collection: ./'Day12 Postman API'/'12Postman API.postman_collection.json'
+          environment: ./'Day12 Postman API'/12Environment.postman_environment.json
           
-     # - newman/newman-run:
-         # collection: ./'Day13 Newman'/13Newman.postman_collection.json
-         # environment: ./'Day13 Newman'/13Environment.postman_environment.json
+      - newman/newman-run:
+          collection: ./'Day13 Newman'/13Newman.postman_collection.json
+          environment: ./'Day13 Newman'/13Environment.postman_environment.json
 
 
-      #- newman/newman-run:
-          #collection: ./'Day10 Mock services'/10Mock_services.postman_collection.json
-          #environment: ./'Day10 Mock services'/10Environment.postman_environment.json
+      - newman/newman-run:
+          collection: ./'Day10 Mock services'/10Mock_services.postman_collection.json
+          environment: ./'Day10 Mock services'/10Environment.postman_environment.json
           
       - run:
           name: Day17_Collection
           command: 
             echo "Run Day17 Collection"
 
-      #- newman/newman-run:
-      #    collection: ./'Day17 Visualizations'/17Visualizations.postman_collection.json
-      #    environment: ./'Day17 Visualizations'/17Environment.postman_environment.json
+      - newman/newman-run:
+          collection: ./'Day17 Visualizations'/17Visualizations.postman_collection.json
+          environment: ./'Day17 Visualizations'/17Environment.postman_environment.json
 
       - run:
           name: Day18_Collection
           command: 
             echo "Run Day18 Collection"
 
-      #- newman/newman-run:
-      #    collection: ./'Day18 APISpecifications'/18APISpecifications.postman_collection.json
-      #    environment: ./'Day18 APISpecifications'/18Environment.postman_environment.json
+      - newman/newman-run:
+          collection: ./'Day18 APISpecifications'/18APISpecifications.postman_collection.json
+          environment: ./'Day18 APISpecifications'/18Environment.postman_environment.json
 
       - run:
           name: Day20_Collection
           command: 
             echo "Run Day20 Collection"
 
-      #- newman/newman-run:
-      #    collection: ./'Day20 Documentation'/20Documentation.postman_collection.json
-      #    environment: ./'Day20 Documentation'/20Environment.postman_environment.json
+      - newman/newman-run:
+          collection: ./'Day20 Documentation'/20Documentation.postman_collection.json
+          environment: ./'Day20 Documentation'/20Environment.postman_environment.json
           
       #- run:
       #    name: Day24_Collection
@@ -194,18 +194,18 @@ jobs:
           command: 
             echo "Run Day26 Collection"
 
-      #- newman/newman-run:
-      #    collection: ./'Day26 Parse HTML response'/26Parse_HTML_response.postman_collection.json
-      #    environment: ./'Day26 Parse HTML response'/26Environment.postman_environment.json
+      - newman/newman-run:
+          collection: ./'Day26 Parse HTML response'/26Parse_HTML_response.postman_collection.json
+          environment: ./'Day26 Parse HTML response'/26Environment.postman_environment.json
 
       - run:
           name: Day27_Collection
           command: 
             echo "Run Day27 Collection"
 
-      #- newman/newman-run:
-      #    collection: ./'Day27 Scenario testing'/27Scenario_testing.postman_collection.json
-      #    environment: ./'Day27 Scenario testing'/27Environment.postman_environment.json
+      - newman/newman-run:
+          collection: ./'Day27 Scenario testing'/27Scenario_testing.postman_collection.json
+          environment: ./'Day27 Scenario testing'/27Environment.postman_environment.json
 
   build-newman:
     executor: node/default
@@ -370,13 +370,13 @@ jobs:
               newman run ./'Day20 Documentation'/20Documentation.postman_collection.json -e ./'Day20 Documentation'/20Environment.postman_environment.json \
                -r cli, json
 
-      - run: |
-              echo "Run the collection and the environment Day 24"
-              echo "Let us look up files"
-              cd ~/project
+      #- run: |
+      #        echo "Run the collection and the environment Day 24"
+      #        echo "Let us look up files"
+      #        cd ~/project
 
-              newman run ./'Day24 Using libraries'/'24Using libraries.postman_collection.json' -e ./'Day24 Using libraries'/24Environment.postman_environment.json \
-               -r cli, json
+      #        newman run ./'Day24 Using libraries'/'24Using libraries.postman_collection.json' -e ./'Day24 Using libraries'/24Environment.postman_environment.json \
+      #         -r cli, json
                
       - run: |
               echo "Run the collection and the environment Day 25"
