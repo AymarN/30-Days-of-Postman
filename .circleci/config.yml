@@ -171,23 +171,23 @@ jobs:
           collection: ./'Day20 Documentation'/20Documentation.postman_collection.json
           environment: ./'Day20 Documentation'/20Environment.postman_environment.json
           
-      #- run:
-      #    name: Day24_Collection
-      #    command: 
-      #      echo "Run Day24 Collection"
+      - run:
+          name: Day24_Collection
+          command: 
+            echo "Run Day24 Collection"
 
-      #- newman/newman-run:
-      #    collection: ./'Day24 Using libraries'/'24Using libraries.postman_collection.json'
-      #    environment: ./'Day24 Using libraries'/24Environment.postman_environment.json
+      - newman/newman-run:
+          collection: ./'Day24 Using libraries'/'24Using libraries.postman_collection.json'
+          environment: ./'Day24 Using libraries'/24Environment.postman_environment.json
 
       - run:
           name: Day25_Collection
           command: 
             echo "Run Day25 Collection"
 
-      #- newman/newman-run:
-      #    collection: ./'Day25 Dynamic request bodies'/'25Dynamic request bodies.postman_collection.json'
-      #    environment: ./'Day25 Dynamic request bodies'/25Environment.postman_environment.json
+      - newman/newman-run:
+          collection: ./'Day25 Dynamic request bodies'/'25Dynamic request bodies.postman_collection.json'
+          environment: ./'Day25 Dynamic request bodies'/25Environment.postman_environment.json
           
       - run:
           name: Day26_Collection
