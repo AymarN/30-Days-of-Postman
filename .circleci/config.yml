@@ -265,6 +265,20 @@ jobs:
              echo " newman was set up"
              newman --version
              ls -a .
+
+      - run: |
+              echo "Run the collection and the environment Day 00"
+              echo "Let us look up files"
+              cd ~/project
+
+              newman run ./'Day0 Pre-requisites'/"Day 00- Pre-requisites.postman_collection.json"  -r cli, json
+             
+      - run: |
+              echo "Run the collection and the environment Day 01"
+              echo "Let us look up files"
+              cd ~/project
+
+              newman run ./'Day1 Fork a collection'/"Day 01- Fork a collection.postman_collection.json" -r cli, json
              
       - run: |
               echo "Run the collection and the environment Day 02"
