@@ -44,7 +44,23 @@ jobs:
              npm install -g newman
              echo " newman was set up"
              newman --version
-                  
+             
+      - run:
+          name: Day0_Collection
+          command: 
+            echo "Run Day0 Collection"
+
+      - newman/newman-run:
+          collection: ./'Day0 Pre-requisites'/Day 00- Pre-requisites.postman_collection.json
+          
+      - run:
+          name: Day1_Collection
+          command: 
+            echo "Run Day1 Collection"
+
+      - newman/newman-run:
+          collection: ./'Day1 Fork a collection'/Day 01- Fork a collection.postman_collection.json
+                    
       - run:
           name: Day2_Collection
           command: 
