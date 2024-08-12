@@ -399,6 +399,14 @@ jobs:
 
               newman run ./'Day20 Documentation'/20Documentation.postman_collection.json -e ./'Day20 Documentation'/20Environment.postman_environment.json \
                -r cli, json
+               
+      - run: |
+              echo "Run the collection and the environment Day 23"
+              echo "Let us look up files"
+              cd ~/project
+
+              newman run "Day23 Data files"/23Datafiles.postman_collection.json -e "Day23 Data files"/23Environment.postman_environment.json \
+               -r cli, json -d geoMap.csv -n 1
 
       - run: |
               echo "Run the collection and the environment Day 24"
