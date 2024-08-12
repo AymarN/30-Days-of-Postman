@@ -66,9 +66,9 @@ jobs:
           command: 
             echo "Run Day2 Collection"
 
-      - newman/newman-run:
-          collection: ./'Day2 Collections and environments'/02Collections_and_environments.postman_collection.json
-          environment: ./'Day2 Collections and environments'/02Environment.postman_environment.json
+      #- newman/newman-run:
+      #    collection: ./'Day2 Collections and environments'/02Collections_and_environments.postman_collection.json
+      #    environment: ./'Day2 Collections and environments'/02Environment.postman_environment.json
 
       - run:
           name: Day3_Collection
@@ -285,8 +285,8 @@ jobs:
               echo "Let us look up files"
               cd ~/project
 
-              newman run ./'Day2 Collections and environments'/02Collections_and_environments.postman_collection.json -e ./'Day2 Collections and environments'/02Environment.postman_environment.json \
-               -r cli, json
+      #        newman run ./'Day2 Collections and environments'/02Collections_and_environments.postman_collection.json -e ./'Day2 Collections and environments'/02Environment.postman_environment.json \
+      #         -r cli, json
              
       - run: |
               echo "Run the collection and the environment Day 03"
