@@ -405,7 +405,7 @@ jobs:
               echo "Let us look up files"
               cd ~/project
 
-              newman run "Day23 Data files"/23Datafiles.postman_collection.json -e "Day23 Data files"/23Environment.postman_environment.json \
+              newman run /.'Day23 Data files'/23Datafiles.postman_collection.json -e "/.'Day23 Data files'/23Environment.postman_environment.json \
                -r cli, json -d geoMap.csv -n 1
 
       - run: |
