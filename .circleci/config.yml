@@ -442,7 +442,7 @@ jobs:
               echo "API token expiration date October 11 2024"
               cd ~/project
 
-              newman run ./'Day26 Parse HTML response'/26Parse_HTML_response.postman_collection.json -e ./'Day26 Parse HTML response'/26Environment.postman_environment.json \
+              newman run ./'Day26 Parse HTML response'/26Parse_HTML_response.postman_collection.json -e ./'Day26 Parse HTML response'/'Postman API Env Day 26.postman_environment.json' \
                -r cli, json
 
       - run: |
