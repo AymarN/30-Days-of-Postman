@@ -162,7 +162,7 @@ jobs:
 
       - newman/newman-run:
           collection: ./'Day17 Visualizations'/17Visualizations.postman_collection.json
-          environment: ./'Day17 Visualizations'/17Environment.postman_environment.json
+          environment: ./'Day17 Visualizations'/'Postman API Env Day 17.postman_environment.json'
 
       - run:
           name: Day18_Collection
