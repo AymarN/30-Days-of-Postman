@@ -77,7 +77,7 @@ jobs:
 
       - newman/newman-run:
           collection: ./'Day3 Add request details'/03Add_Request_details.postman_collection.json
-          environment: ./'Day3 Add request details'/03Environment.postman_environment.json
+          environment: ./'Day3 Add request details'/'Day 03 Environment.postman_environment.json'
 
       - run:
           name: Day4_Collection
@@ -295,7 +295,7 @@ jobs:
               echo "API token expiration date October 11 2024"
               cd ~/project
 
-              newman run ./'Day3 Add request details'/03Add_Request_details.postman_collection.json  -e ./'Day3 Add request details'/03Environment.postman_environment.json \
+              newman run ./'Day3 Add request details'/03Add_Request_details.postman_collection.json  -e ./'Day3 Add request details'/'Day 03 Environment.postman_environment.json' \
                -r cli, json
 
       - run: |
