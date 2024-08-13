@@ -416,7 +416,7 @@ jobs:
               cd ~/project
 
               newman run ./'Day23 Data files'/23Datafiles.postman_collection.json -e "./'Day23 Data files'/'Postman API Env Day 23.postman_environment.json' \
-               -r cli, json -d geoMap.csv -n 1
+              -r cli, json -d 'geoMap.csv' -n 1
 
       - run: |
               echo "Run the collection and the environment Day 24"
