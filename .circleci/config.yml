@@ -140,7 +140,7 @@ jobs:
 
       - newman/newman-run:
           collection: ./'Day11 Monitoring'/11Monitoring.postman_collection.json
-          environment: ./'Day11 Monitoring'/'Day 11 Environment.postman_environment.json
+          environment: ./'Day11 Monitoring'/'Day 11 Environment.postman_environment.json'
 
       - run:
           name: Day12_Collection
