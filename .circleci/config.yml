@@ -451,7 +451,7 @@ jobs:
               echo "API token expiration date October 11 2024"
               cd ~/project
 
-              newman run ./'Day27 Scenario testing'/27Scenario_testing.postman_collection.json -e ./'Day27 Scenario testing'/Postman API Env Day 27.postman_environment.json' \
+              newman run ./'Day27 Scenario testing'/27Scenario_testing.postman_collection.json -e ./'Day27 Scenario testing'/'Postman API Env Day 27.postman_environment.json' \
                -r cli, json
 
               
