@@ -86,7 +86,7 @@ jobs:
 
       - newman/newman-run:
           collection: ./'Day4 Authorization'/04Authorization.postman_collection.json
-          environment: ./'Day4 Authorization'/04Environment.postman_environment.json
+          environment: ./'Day4 Authorization'/'Day 04 Environment.postman_environment.json'
 
       - run:
           name: Day5_Collection
@@ -95,7 +95,7 @@ jobs:
 
       - newman/newman-run:
           environment: ./'Day5 Variables'/05Environment.postman_environment.json
-          collection: ./'Day5 Variables'/05Variables.postman_collection.json
+          collection: ./'Day5 Variables'/'Day 05 Environment.postman_environment.json'
 
       - run:
           name: Day7_Collection
@@ -104,7 +104,7 @@ jobs:
 
       - newman/newman-run:
           collection: ./Day7Debugging/"Day 07- Debugging.postman_collection.json"
-          environment: ./Day7Debugging/"Day 07 Environment.postman_environment.json"
+          environment: ./Day7Debugging/'Day 07 Environment.postman_environment.json'
 
       - run:
           name: Day8_Collection
@@ -113,7 +113,7 @@ jobs:
 
       - newman/newman-run:
           collection: ./'Day8 Run a collection'/08Run_a_collection.postman_collection.json
-          environment: ./'Day8 Run a collection'/08Environment.postman_environment.json
+          environment: ./'Day8 Run a collection'/'Day 08 Environment.postman_environment.json'
 
       - run:
           name: Day9_Collection
@@ -122,7 +122,7 @@ jobs:
 
       - newman/newman-run:
           collection: ./'Day9 Scripting'/09Scripting.postman_collection.json
-          environment: ./'Day9 Scripting'/09Environment.postman_environment.json
+          environment: ./'Day9 Scripting'/'Day 09 Environment.postman_environment.json'
 
       - run:
           name: Day10_Collection
@@ -131,7 +131,7 @@ jobs:
 
       - newman/newman-run:
           collection: ./'Day10 Mock services'/10Mock_services.postman_collection.json
-          environment: ./'Day10 Mock services'/10Environment.postman_environment.json
+          environment: ./'Day10 Mock services'/'Day 10 Environment.postman_environment.json'
           
       - run:
           name: Day11_Collection
@@ -140,7 +140,7 @@ jobs:
 
       - newman/newman-run:
           collection: ./'Day11 Monitoring'/11Monitoring.postman_collection.json
-          environment: ./'Day11 Monitoring'/11Environment.postman_environment.json
+          environment: ./'Day11 Monitoring'/'Day 11 Environment.postman_environment.json
 
       - run:
           name: Day12_Collection
@@ -153,12 +153,7 @@ jobs:
           
       - newman/newman-run:
           collection: ./'Day13 Newman'/13Newman.postman_collection.json
-          environment: ./'Day13 Newman'/13Environment.postman_environment.json
-
-
-      - newman/newman-run:
-          collection: ./'Day10 Mock services'/10Mock_services.postman_collection.json
-          environment: ./'Day10 Mock services'/10Environment.postman_environment.json
+          environment: ./'Day13 Newman'/'Day 13 Environment.postman_environment.json'
           
       - run:
           name: Day17_Collection
@@ -176,7 +171,7 @@ jobs:
 
       - newman/newman-run:
           collection: ./'Day18 APISpecifications'/18APISpecifications.postman_collection.json
-          environment: ./'Day18 APISpecifications'/18Environment.postman_environment.json
+          environment: ./'Day18 APISpecifications'/'Postman API Env Day 18.postman_environment.json'
 
       - run:
           name: Day20_Collection
@@ -185,7 +180,7 @@ jobs:
 
       - newman/newman-run:
           collection: ./'Day20 Documentation'/20Documentation.postman_collection.json
-          environment: ./'Day20 Documentation'/20Environment.postman_environment.json
+          environment: ./'Day20 Documentation'/'Postman API Env Day 20.postman_environment.json'
           
       - run:
           name: Day24_Collection
@@ -194,7 +189,7 @@ jobs:
 
       - newman/newman-run:
           collection: ./'Day24 Using libraries'/'24Using libraries.postman_collection.json'
-          environment: ./'Day24 Using libraries'/24Environment.postman_environment.json
+          environment: ./'Day24 Using libraries'/'Postman API Env Day 24.postman_environment.json'
 
       - run:
           name: Day25_Collection
@@ -203,7 +198,7 @@ jobs:
 
       - newman/newman-run:
           collection: ./'Day25 Dynamic request bodies'/'25Dynamic request bodies.postman_collection.json'
-          environment: ./'Day25 Dynamic request bodies'/25Environment.postman_environment.json
+          environment: ./'Day25 Dynamic request bodies'/'Postman API Env Day 25.postman_environment.json'
           
       - run:
           name: Day26_Collection
@@ -221,7 +216,7 @@ jobs:
 
       - newman/newman-run:
           collection: ./'Day27 Scenario testing'/27Scenario_testing.postman_collection.json
-          environment: ./'Day27 Scenario testing'/27Environment.postman_environment.json
+          environment: ./'Day27 Scenario testing'/Postman API Env Day 27.postman_environment.json'
 
   build-newman:
     executor: node/default
@@ -304,7 +299,7 @@ jobs:
               echo "API token expiration date October 11 2024"
               cd ~/project
 
-              newman run ./'Day4 Authorization'/04Authorization.postman_collection.json  -e ./'Day4 Authorization'/04Environment.postman_environment.json \
+              newman run ./'Day4 Authorization'/04Authorization.postman_collection.json  -e ./'Day4 Authorization'/'Day 04 Environment.postman_environment.json' \
                -r cli, json
 
       - run: |
@@ -313,7 +308,7 @@ jobs:
               echo "API token expiration date October 11 2024"
               cd ~/project
 
-              newman run ./'Day5 Variables'/05Variables.postman_collection.json  -e ./'Day5 Variables'/05Environment.postman_environment.json \
+              newman run ./'Day5 Variables'/05Variables.postman_collection.json  -e ./'Day5 Variables'/'Day 05 Environment.postman_environment.json' \
                -r cli, json
 
       - run: |
@@ -322,7 +317,7 @@ jobs:
               echo "API token expiration date October 11 2024"
               cd ~/project
 
-              newman run ./Day7Debugging/"Day 07- Debugging.postman_collection.json" -e ./Day7Debugging/"Day 07 Environment.postman_environment.json" \
+              newman run ./Day7Debugging/"Day 07- Debugging.postman_collection.json" -e ./Day7Debugging/'Day 07 Environment.postman_environment.json' \
                -r cli, json
                
       - run: |
@@ -331,7 +326,7 @@ jobs:
               echo "API token expiration date October 11 2024"
               cd ~/project
 
-              newman run ./'Day8 Run a collection'/08Run_a_collection.postman_collection.json -e ./'Day8 Run a collection'/08Environment.postman_environment.json  \
+              newman run ./'Day8 Run a collection'/08Run_a_collection.postman_collection.json -e ./'Day8 Run a collection'/'Day 08 Environment.postman_environment.json'  \
                -r cli, json
 
       - run: |
@@ -340,7 +335,7 @@ jobs:
               echo "API token expiration date October 11 2024"
               cd ~/project
 
-              newman run ./'Day9 Scripting'/09Scripting.postman_collection.json -e ./'Day9 Scripting'/09Environment.postman_environment.json  \
+              newman run ./'Day9 Scripting'/09Scripting.postman_collection.json -e ./'Day9 Scripting'/'Day 09 Environment.postman_environment.json'  \
                -r cli, json
 
       - run: |
@@ -349,7 +344,7 @@ jobs:
               echo "API token expiration date October 11 2024"
               cd ~/project
 
-              newman run ./'Day10 Mock services'/10Mock_services.postman_collection.json -e ./'Day10 Mock services'/10Environment.postman_environment.json \
+              newman run ./'Day10 Mock services'/10Mock_services.postman_collection.json -e ./'Day10 Mock services'/'Day 10 Environment.postman_environment.json' \
                -r cli, json
 
       - run: |
@@ -358,7 +353,7 @@ jobs:
               echo "API token expiration date October 11 2024"
               cd ~/project
 
-              newman run ./'Day11 Monitoring'/11Monitoring.postman_collection.json -e ./'Day11 Monitoring'/11Environment.postman_environment.json \
+              newman run ./'Day11 Monitoring'/11Monitoring.postman_collection.json -e ./'Day11 Monitoring'/'Day 11 Environment.postman_environment.json' \
                -r cli, json
                
       - run: |
@@ -367,7 +362,7 @@ jobs:
               echo "API token expiration date October 11 2024"
               cd ~/project
 
-              newman run ./'Day12 Postman API'/'12Postman API.postman_collection.json' -e ./'Day12 Postman API'/12Environment.postman_environment.json \
+              newman run ./'Day12 Postman API'/'12Postman API.postman_collection.json' -e ./'Day12 Postman API'/'Postman API env.postman_environment.json' \
                -r cli, json
 
       - run: |
@@ -376,7 +371,7 @@ jobs:
               echo "API token expiration date October 11 2024"
               cd ~/project
 
-              newman run ./'Day13 Newman'/13Newman.postman_collection.json -e ./'Day13 Newman'/13Environment.postman_environment.json \
+              newman run ./'Day13 Newman'/13Newman.postman_collection.json -e ./'Day13 Newman'/'Day 13 Environment.postman_environment.json' \
                -r cli, json
 
       #- run: |
@@ -393,7 +388,7 @@ jobs:
               echo "API token expiration date October 11 2024"
               cd ~/project
 
-              newman run ./'Day17 Visualizations'/17Visualizations.postman_collection.json -e ./'Day17 Visualizations'/17Environment.postman_environment.json \
+              newman run ./'Day17 Visualizations'/17Visualizations.postman_collection.json -e ./'Day17 Visualizations'/'Postman API Env Day 17.postman_environment.json' \
                -r cli, json
 
       - run: |
@@ -402,7 +397,7 @@ jobs:
               echo "API token expiration date October 11 2024"
               cd ~/project
 
-              newman run ./'Day18 APISpecifications'/18APISpecifications.postman_collection.json -e ./'Day18 APISpecifications'/18Environment.postman_environment.json \
+              newman run ./'Day18 APISpecifications'/18APISpecifications.postman_collection.json -e ./'Day18 APISpecifications'/'Postman API Env Day 18.postman_environment.json' \
                -r cli, json
                
       - run: |
@@ -411,7 +406,7 @@ jobs:
               echo "API token expiration date October 11 2024"
               cd ~/project
 
-              newman run ./'Day20 Documentation'/20Documentation.postman_collection.json -e ./'Day20 Documentation'/20Environment.postman_environment.json \
+              newman run ./'Day20 Documentation'/20Documentation.postman_collection.json -e ./'Day20 Documentation'/'Postman API Env Day 20.postman_environment.json' \
                -r cli, json
                
       - run: |
@@ -420,7 +415,7 @@ jobs:
               echo "API token expiration date October 11 2024"
               cd ~/project
 
-              newman run /.'Day23 Data files'/23Datafiles.postman_collection.json -e "/.'Day23 Data files'/23Environment.postman_environment.json \
+              newman run /.'Day23 Data files'/23Datafiles.postman_collection.json -e "/.'Day23 Data files'/'Postman API Env Day 23.postman_environment.json' \
                -r cli, json -d geoMap.csv -n 1
 
       - run: |
@@ -429,7 +424,7 @@ jobs:
               echo "API token expiration date October 11 2024"
               cd ~/project
 
-              newman run ./'Day24 Using libraries'/'24Using libraries.postman_collection.json' -e ./'Day24 Using libraries'/24Environment.postman_environment.json \
+              newman run ./'Day24 Using libraries'/'24Using libraries.postman_collection.json' -e ./'Day24 Using libraries'/'Postman API Env Day 24.postman_environment.json' \
                -r cli, json
                
       - run: |
@@ -438,7 +433,7 @@ jobs:
               echo "API token expiration date October 11 2024"
               cd ~/project
 
-              newman run  ./'Day25 Dynamic request bodies'/'25Dynamic request bodies.postman_collection.json' -e ./'Day25 Dynamic request bodies'/25Environment.postman_environment.json\
+              newman run  ./'Day25 Dynamic request bodies'/'25Dynamic request bodies.postman_collection.json' -e ./'Day25 Dynamic request bodies'/'Postman API Env Day 25.postman_environment.json' \
                -r cli, json
 
       - run: |
@@ -456,7 +451,7 @@ jobs:
               echo "API token expiration date October 11 2024"
               cd ~/project
 
-              newman run ./'Day27 Scenario testing'/27Scenario_testing.postman_collection.json -e ./'Day27 Scenario testing'/27Environment.postman_environment.json  \
+              newman run ./'Day27 Scenario testing'/27Scenario_testing.postman_collection.json -e ./'Day27 Scenario testing'/Postman API Env Day 27.postman_environment.json' \
                -r cli, json
 
               
