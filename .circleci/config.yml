@@ -94,8 +94,8 @@ jobs:
             echo "Run Day5 Collection"
 
       - newman/newman-run:
-          environment: ./'Day5 Variables'/05Environment.postman_environment.json
-          collection: ./'Day5 Variables'/'Day 05 Environment.postman_environment.json'
+          environment: ./'Day5 Variables'/'Day 05 Environment.postman_environment.json'
+          collection: ./'Day5 Variables'/05Variables.postman_collection.json
 
       - run:
           name: Day7_Collection
