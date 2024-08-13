@@ -216,7 +216,7 @@ jobs:
 
       - newman/newman-run:
           collection: ./'Day27 Scenario testing'/27Scenario_testing.postman_collection.json
-          environment: ./'Day27 Scenario testing'/Postman API Env Day 27.postman_environment.json'
+          environment: ./'Day27 Scenario testing'/'Postman API Env Day 27.postman_environment.json'
 
   build-newman:
     executor: node/default
