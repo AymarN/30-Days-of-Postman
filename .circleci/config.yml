@@ -149,7 +149,7 @@ jobs:
 
       - newman/newman-run:
           collection: ./'Day12 Postman API'/'12Postman API.postman_collection.json'
-          environment: ./'Day12 Postman API'/12Environment.postman_environment.json
+          environment: ./'Day12 Postman API'/'Postman API env.postman_environment.json'
           
       - newman/newman-run:
           collection: ./'Day13 Newman'/13Newman.postman_collection.json
