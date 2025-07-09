@@ -278,7 +278,6 @@ jobs:
       - run: |
               echo "Run the collection and the environment Day 02"
               echo "Let us look up files"
-              echo "API token expiration date October 11 2024"
               cd ~/project
 
               newman run ./'Day2 Collections and environments'/02Collections_and_environments.postman_collection.json -e ./'Day2 Collections and environments'/'Day 02 Environment.postman_environment.json' \
@@ -287,7 +286,6 @@ jobs:
       - run: |
               echo "Run the collection and the environment Day 03"
               echo "Let us look up files"
-              echo "API token expiration date October 11 2024"
               cd ~/project
 
               newman run ./'Day3 Add request details'/03Add_Request_details.postman_collection.json  -e ./'Day3 Add request details'/'Day 03 Environment.postman_environment.json' \
@@ -296,20 +294,19 @@ jobs:
       - run: |
               echo "Run the collection and the environment Day 04"
               echo "Let us look up files"
-              echo "API token expiration date October 11 2024"
               cd ~/project
 
               newman run ./'Day4 Authorization'/04Authorization.postman_collection.json  -e ./'Day4 Authorization'/'Day 04 Environment.postman_environment.json' \
                -r cli, json
 
-      - run: |
-              echo "Run the collection and the environment Day 05"
-              echo "Let us look up files"
-              echo "API token expiration date October 11 2024"
-              cd ~/project
+      #- run: |
+      #        echo "Run the collection and the environment Day 05"
+      #        echo "Let us look up files"
+      #        echo "API token expiration date October 11 2024"
+      #        cd ~/project
 
-              newman run ./'Day5 Variables'/05Variables.postman_collection.json  -e ./'Day5 Variables'/'Day 05 Environment.postman_environment.json' \
-               -r cli, json
+      #        newman run ./'Day5 Variables'/05Variables.postman_collection.json  -e ./'Day5 Variables'/'Day 05 Environment.postman_environment.json' \
+      #         -r cli, json
 
       - run: |
               echo "Run the collection and the environment Day 07"
