@@ -1,10 +1,11 @@
 {
 	"info": {
-		"_postman_id": "d23bf111-38b2-44cc-b398-a13d2fbd06cf",
+		"_postman_id": "6e74d8ed-3aed-4f6d-9f1b-cbed48b73f2c",
 		"name": "Day 04: Authorization",
 		"description": "## Instructions for Day 4: Authorization\n\n1. **Get the challenge:** Fork [the parent collection `Day 04: Authorization`](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-56245825-855e-4b97-ae54-b78441d511e4) to your own public workspace.\n2. **Read the documentation:** In your fork, select the first folder. Expand the context bar on the right to follow the instructions in the collection documentation.\n3. **Submit your solution:** Select the second folder `Submit your solution` and follow the instructions in the documentation to validate your solution.\n\n## Concepts covered\n- [Postman API](https://www.postman.com/postman/workspace/postman-public-workspace/collection/12959542-c8142d51-e97c-46b6-bd77-52bb66712c9a?ctx=documentation)\n- [Authorizing requests](https://learning.postman.com/docs/sending-requests/authorization/)\n\n## Additional resources\n- [Inheriting Auth Details](https://youtu.be/WFiYsfSkyXE) video\n- [Securely using API keys in Postman](https://blog.postman.com/how-to-use-api-keys/) blog\n\n## Next challenge\n\n- [Variables](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-7b48e949-713b-4922-bb69-73fb949cd5af)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "10921002"
+		"_exporter_id": "33917175",
+		"_collection_link": "https://galactic-escape-661823.postman.co/workspace/30-Days-of-Postman~50f5aeaa-518e-4ec1-82bd-08e5d455948a/collection/33917175-6e74d8ed-3aed-4f6d-9f1b-cbed48b73f2c?action=share&source=collection_link&creator=33917175"
 	},
 	"item": [
 		{
@@ -295,7 +296,8 @@
 									"}\r",
 									"pm.visualizer.set(template)"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
