@@ -17,9 +17,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{mockURL}}",
+							"raw": "https://e2e250ca-9883-4b15-8218-e34ac53265d6.mock.pstmn.io",
+							"protocol": "https",
 							"host": [
-								"{{mockURL}}"
+								"e2e250ca-9883-4b15-8218-e34ac53265d6",
+								"mock",
+								"pstmn",
+								"io"
 							]
 						}
 					},
@@ -194,7 +198,8 @@
 									"}\r",
 									"pm.visualizer.set(template)"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
