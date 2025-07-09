@@ -1,10 +1,11 @@
 {
 	"info": {
-		"_postman_id": "44000590-507c-4f84-ba1b-392f6e0bb9f4",
+		"_postman_id": "36bf4d91-6720-478b-919a-704ed5ffa92d",
 		"name": "Day 09: Scripting",
 		"description": "## Instructions for Day 9: Scripting\n\n1. **Get the challenge:** Fork [the parent collection `Day 09: Scripting`](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-7b82a13b-7c2a-4b51-9620-66a51df3e313) to your own public workspace.\n2. **Read the documentation:** In your fork, select the first folder. Expand the context bar on the right to follow the instructions in the collection documentation.\n3. **Submit your solution:** Select the second folder `Submit your solution` and follow the instructions in the documentation to validate your solution.\n\n## Concepts covered\n- [Scripting in Postman](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/)\n- [Building workflows](https://learning.postman.com/docs/running-collections/building-workflows/)\n\n## Additional resources\n- [Test script examples](https://learning.postman.com/docs/writing-scripts/script-references/test-examples/)\n\n## Next challenge\n\n- [Mock services](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-900c913f-3ce2-4445-9508-4f994faeff10)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "10921002"
+		"_exporter_id": "33917175",
+		"_collection_link": "https://galactic-escape-661823.postman.co/workspace/30-Days-of-Postman~50f5aeaa-518e-4ec1-82bd-08e5d455948a/collection/33917175-36bf4d91-6720-478b-919a-704ed5ffa92d?action=share&source=collection_link&creator=33917175"
 	},
 	"item": [
 		{
@@ -210,7 +211,8 @@
 									"}\r",
 									"pm.visualizer.set(template)"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
