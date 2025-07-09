@@ -88,14 +88,14 @@ jobs:
           collection: ./'Day4 Authorization'/04Authorization.postman_collection.json
           environment: ./'Day4 Authorization'/'Day 04 Environment.postman_environment.json'
 
-      - run:
-          name: Day5_Collection
-          command: 
-            echo "Run Day5 Collection"
+    #- run:
+    #    name: Day5_Collection
+    #    command: 
+    #      echo "Run Day5 Collection"
 
-      - newman/newman-run:
-          environment: ./'Day5 Variables'/'Day 05 Environment.postman_environment.json'
-          collection: ./'Day5 Variables'/05Variables.postman_collection.json
+    # - newman/newman-run:
+    #     environment: ./'Day5 Variables'/'Day 05 Environment.postman_environment.json'
+    #    collection: ./'Day5 Variables'/05Variables.postman_collection.json
 
       - run:
           name: Day7_Collection
