@@ -1,10 +1,11 @@
 {
 	"info": {
-		"_postman_id": "dd5b8955-cc27-468f-aa91-f35faa51a0ce",
+		"_postman_id": "d4c5ceda-7a7b-4374-b716-4b8aa0529678",
 		"name": "Day 03: Add request details",
 		"description": "## Instructions for Day 3: Add request details\n\n1. **Get the challenge:** Fork [the parent collection `Day 03: Add request details`](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-969f4824-25ba-4ed6-8926-f71ce4ee079d) to your own public workspace.\n2. **Read the documentation:** In your fork, select the first folder. Expand the context bar on the right to follow the instructions in the collection documentation.\n3. **Submit your solution:** Select the second folder `Submit your solution` and follow the instructions in the documentation to validate your solution.\n\n## Concepts covered\n- [Sending body data](https://learning.postman.com/docs/sending-requests/requests/#sending-body-data)\n- [Configuring request headers](https://learning.postman.com/docs/sending-requests/requests/#configuring-request-headers)\n\n## Additional resources\n- [Upload a File via POST Request](https://youtu.be/S7bwkys6D0E) video\n\n## Next challenge\n\n- [Authorization](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-56245825-855e-4b97-ae54-b78441d511e4)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "10921002"
+		"_exporter_id": "33917175",
+		"_collection_link": "https://galactic-escape-661823.postman.co/workspace/30-Days-of-Postman~50f5aeaa-518e-4ec1-82bd-08e5d455948a/collection/33917175-d4c5ceda-7a7b-4374-b716-4b8aa0529678?action=share&source=collection_link&creator=33917175"
 	},
 	"item": [
 		{
@@ -120,7 +121,8 @@
 									"}\r",
 									"pm.visualizer.set(template)"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
