@@ -1,10 +1,11 @@
 {
 	"info": {
-		"_postman_id": "fe71d34e-71e8-496b-ab6d-9254cc1948d1",
+		"_postman_id": "eee530b1-261a-4494-99b3-ac5b9076946a",
 		"name": "Day 10: Mock services",
 		"description": "## Instructions for Day 10: Mock services\n\n1. **Get the challenge:** Fork [the main collection `Day 10: Mock services`](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-900c913f-3ce2-4445-9508-4f994faeff10) to your own public workspace.\n2. **Read the documentation:** In your fork, select the first folder. Expand the context bar on the right to follow the instructions in the collection documentation.\n3. **Submit your solution:** Select the second folder `Submit your solution` and follow the instructions in the documentation to validate your solution.\n\n## Concepts covered\n- [Setting up mock servers](https://learning.postman.com/docs/designing-and-developing-your-api/mocking-data/setting-up-mock/)\n\n## Additional resources\n- [Fake it till you make it: mocks for agile development](https://medium.com/better-practices/https-medium-com-postman-engineering-fake-it-till-you-make-it-mocks-for-agile-development-f4d050cad694)\n- [Mocks sample collection](https://www.postman.com/postman-marketing-legacy/workspace/postman-marketing-s-public-workspace/documentation/3967924-4f82b9cf-ca7f-4874-aabf-befa47e5d350)\n\n## Next challenge\n\n- [Monitoring](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-7e3a6d75-57cb-4e54-82ff-b4f9e402c8cc)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "10921002"
+		"_exporter_id": "33917175",
+		"_collection_link": "https://galactic-escape-661823.postman.co/workspace/30-Days-of-Postman~50f5aeaa-518e-4ec1-82bd-08e5d455948a/collection/33917175-eee530b1-261a-4494-99b3-ac5b9076946a?action=share&source=collection_link&creator=33917175"
 	},
 	"item": [
 		{
@@ -16,13 +17,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://96d08a0e-1674-4254-acd7-c7cc13aa7691.mock.pstmn.io",
-							"protocol": "https",
+							"raw": "{{mockURL}}",
 							"host": [
-								"96d08a0e-1674-4254-acd7-c7cc13aa7691",
-								"mock",
-								"pstmn",
-								"io"
+								"{{mockURL}}"
 							]
 						}
 					},
