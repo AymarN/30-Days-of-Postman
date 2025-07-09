@@ -1,10 +1,11 @@
 {
 	"info": {
-		"_postman_id": "78f353e7-1077-4784-8403-fe918f83031e",
+		"_postman_id": "b02a2124-792b-4827-99af-36e0edeb5c8e",
 		"name": "Day 08: Run a collection",
 		"description": "## Instructions for Day 8: Run a collection\n\n1. **Get the challenge:** Fork [the parent collection `Day 08: Run a collection`](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-1da88e07-1c0a-401c-996b-a3f2c9c3f486) to your own public workspace.\n2. **Read the documentation:** In your fork, select the first folder. Expand the context bar on the right to follow the instructions in the collection documentation.\n3. **Submit your solution:** Select the second folder `Submit your solution` and follow the instructions in the documentation to validate your solution.\n\n## Concepts covered\n- [Collection Runner](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)\n\n## Additional resources\n- [Log Response Data in Collection Runs](https://youtu.be/UreV_7fHKiU) video\n\n## Next challenge\n\n- [Scripting](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-7b82a13b-7c2a-4b51-9620-66a51df3e313)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "10921002"
+		"_exporter_id": "33917175",
+		"_collection_link": "https://galactic-escape-661823.postman.co/workspace/30-Days-of-Postman~50f5aeaa-518e-4ec1-82bd-08e5d455948a/collection/33917175-b02a2124-792b-4827-99af-36e0edeb5c8e?action=share&source=collection_link&creator=33917175"
 	},
 	"item": [
 		{
@@ -233,7 +234,8 @@
 									"}\r",
 									"pm.visualizer.set(template)"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
