@@ -237,16 +237,6 @@ jobs:
       #     paths:
       #       - .
 
-  test:
-    executor: node/default
-    steps:
-      - checkout
-      - install-node
-      #- install-npm
-      - run: npm --version
-      - restore_cache:
-          key: newman--{{ checksum "package-lock.json" }}
-
   test-newman:
     executor: node/default
     steps:
@@ -260,6 +250,17 @@ jobs:
              echo " newman was set up"
              newman --version
              ls -a .
+
+  #test:
+  #  executor: node/default
+  #  steps:
+  #    - checkout
+  #    - install-node
+      #- install-npm
+  #    - run: npm --version
+  #    - restore_cache:
+  #        key: newman--{{ checksum "package-lock.json" }}
+
 
       - run: |
               echo "Run the collection and the environment Day 00"
