@@ -1,10 +1,11 @@
 {
 	"info": {
-		"_postman_id": "723745d5-5d4e-4715-806e-6d43050dbab9",
+		"_postman_id": "c6a90137-e1bf-47c5-9081-b0c6f85f1f6a",
 		"name": "Day 25: Dynamic request bodies",
 		"description": "## Instructions for Day 25: Dynamic request bodies\n\n1. **Get the challenge:** Fork [the parent collection `Day 25: Dynamic request bodies`](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-2f480c99-4608-4210-b3c5-5a75c7e7a384) from the main workspace to your own public workspace.\n2. **Read the documentation:** In your fork, select the first folder. Expand the context bar on the right to follow the instructions in the collection documentation.\n3. **Submit your solution:** Select the second folder `Submit your solution` and follow the instructions in the documentation to validate your solution.\n\n## Concepts covered\n- [Variables](https://learning.postman.com/docs/sending-requests/variables/)\n- [Scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/)\n- [Using dynamic variables](https://learning.postman.com/docs/writing-scripts/script-references/variables-list/)\n- [Sending asynchronous requests](https://learning.postman.com/docs/writing-scripts/script-references/postman-sandbox-api-reference/#sending-requests-from-scripts)\n- [Writing tests](https://learning.postman.com/docs/writing-scripts/test-scripts/)\n\n## Additional resources\n- [Example](https://www.postman.com/postman/workspace/postman-answers/collection/9215231-b9133e48-73c3-4aa4-b189-e038ee4c5e00?ctx=documentation) in Postman Answers workspace\n\n## Next challenge\n\n- [Parse HTML response](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-9f9419fe-5249-4b44-b07f-4cb3ef913c81)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "10921002"
+		"_exporter_id": "33917175",
+		"_collection_link": "https://galactic-escape-661823.postman.co/workspace/30-Days-of-Postman~50f5aeaa-518e-4ec1-82bd-08e5d455948a/collection/33917175-c6a90137-e1bf-47c5-9081-b0c6f85f1f6a?action=share&source=collection_link&creator=33917175"
 	},
 	"item": [
 		{
