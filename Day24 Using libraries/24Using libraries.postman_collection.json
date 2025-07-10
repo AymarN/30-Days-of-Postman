@@ -1,10 +1,11 @@
 {
 	"info": {
-		"_postman_id": "68696f31-fa18-450a-b6c7-5abbef9c30d5",
+		"_postman_id": "bcf18528-233e-4d81-9cb4-c3c5674522f2",
 		"name": "Day 24: Using libraries",
 		"description": "## Instructions for Day 24: Using libraries\n\n1. **Get the challenge:** Fork [the parent collection `Day 24: Using libraries`](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-c8009938-a174-48d3-82b2-8b2137068508) from the main workspace to your own public workspace.\n2. **Read the documentation:** In your fork, select the first folder. Expand the context bar on the right to follow the instructions in the collection documentation.\n3. **Submit your solution:** Select the second folder `Submit your solution` and follow the instructions in the documentation to validate your solution.\n\n## Concepts covered\n- [Dynamic variables using faker library](https://learning.postman.com/docs/writing-scripts/script-references/variables-list/)\n- [Using external libraries](https://learning.postman.com/docs/writing-scripts/script-references/postman-sandbox-api-reference/#using-external-libraries)\n\n## Next challenge\n\n- [Dynamic request bodies](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-2f480c99-4608-4210-b3c5-5a75c7e7a384)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "10921002"
+		"_exporter_id": "33917175",
+		"_collection_link": "https://galactic-escape-661823.postman.co/workspace/30-Days-of-Postman~50f5aeaa-518e-4ec1-82bd-08e5d455948a/collection/33917175-bcf18528-233e-4d81-9cb4-c3c5674522f2?action=share&source=collection_link&creator=33917175"
 	},
 	"item": [
 		{
@@ -208,7 +209,8 @@
 									"}\r",
 									"pm.visualizer.set(template)"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -257,6 +259,9 @@
 			"description": "Follow the instructions in the request documentation."
 		}
 	],
+	"auth": {
+		"type": "apikey"
+	},
 	"event": [
 		{
 			"listen": "prerequest",
