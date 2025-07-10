@@ -1,10 +1,11 @@
 {
 	"info": {
-		"_postman_id": "3a54a8dc-16b9-4e55-b4b4-5ca267a1895b",
+		"_postman_id": "d03a3185-5bf4-4ea9-9450-43be1c73575b",
 		"name": "Day 20: Documentation",
 		"description": "## Instructions for Day 20: Documentation\n\n1. **Get the challenge:** Fork [the parent collection `Day 20: Documentation`](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-0f00502d-d2d8-45fc-bd69-0fbb68eb5733) from the main workspace to your own public workspace.\n2. **Read the documentation:** In your fork, select the first folder. Expand the context bar on the right to follow the instructions in the collection documentation.\n3. **Submit your solution:** Select the second folder `Submit your solution` and follow the instructions in the documentation to validate your solution.\n\n## Concepts covered\n- [Documenting your API](https://learning.postman.com/docs/publishing-your-api/documenting-your-api/)\n\n## Additional resources\n- [The Good Documentation checklist](https://blog.postman.com/postman-good-documentation-checklist/)\n- [The Ultimate API Publisher's Guide](https://medium.com/better-practices/the-ultimate-api-publishers-guide-be74a2692326)\n\n## Next challenge\n\n- [Versioning](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-8b2c3197-1df3-44ba-9687-eba60470d270)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "10921002"
+		"_exporter_id": "33917175",
+		"_collection_link": "https://galactic-escape-661823.postman.co/workspace/30-Days-of-Postman~50f5aeaa-518e-4ec1-82bd-08e5d455948a/collection/33917175-d03a3185-5bf4-4ea9-9450-43be1c73575b?action=share&source=collection_link&creator=33917175"
 	},
 	"item": [
 		{
