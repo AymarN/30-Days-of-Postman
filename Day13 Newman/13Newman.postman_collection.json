@@ -1,10 +1,11 @@
 {
 	"info": {
-		"_postman_id": "6626141d-08e4-407b-83fd-489a5034f365",
+		"_postman_id": "00454035-ecfd-4e77-9a5e-99837584a4f5",
 		"name": "Day 13: Newman",
 		"description": "## Instructions for Day 13: Newman\n\n1. **Get the challenge:** Fork [the parent collection `Day 13: Newman`](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-a509b7b4-4b46-4593-9dec-2bafbe7d9524) from the main workspace to your own public workspace.\n2. **Read the documentation:** In your fork, select the first folder. Expand the context bar on the right to follow the instructions in the collection documentation.\n3. **Submit your solution:** Select the second folder `Submit your solution` and follow the instructions in the documentation to validate your solution.\n\n## Concepts covered\n- [Variables](https://learning.postman.com/docs/sending-requests/variables/)\n- [Scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/)\n- [Writing tests](https://learning.postman.com/docs/writing-scripts/test-scripts/)\n- [Running collections on the command line with Newman](https://learning.postman.com/docs/running-collections/using-newman-cli/command-line-integration-with-newman/)\n\n## Additional resources\n- [Newman on GitHub](https://github.com/postmanlabs/newman)\n- [Newman on npm](https://www.npmjs.com/package/newman)\n\n## Next challenge\n\n- [OAuth](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-0e372950-c58c-483d-aea9-fe676547e6f0)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "10921002"
+		"_exporter_id": "33917175",
+		"_collection_link": "https://galactic-escape-661823.postman.co/workspace/30-Days-of-Postman~50f5aeaa-518e-4ec1-82bd-08e5d455948a/collection/33917175-00454035-ecfd-4e77-9a5e-99837584a4f5?action=share&source=collection_link&creator=33917175"
 	},
 	"item": [
 		{
@@ -270,7 +271,8 @@
 									"}\r",
 									"pm.visualizer.set(template)"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
