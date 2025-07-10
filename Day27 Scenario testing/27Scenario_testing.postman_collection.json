@@ -1,10 +1,11 @@
 {
 	"info": {
-		"_postman_id": "36cc2393-fce1-4a14-8c1c-58b248a5584b",
+		"_postman_id": "e092daa8-8142-4a38-9636-6d66e9a88350",
 		"name": "Day 27: Scenario testing",
 		"description": "## Instructions for Day 27: Scenario testing\n\n1. **Get the challenge:** Fork [the parent collection `Day 27: Scenario testing`](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-e9968036-7ad8-4daa-97c3-331184213392) from the main workspace to your own public workspace.\n2. **Read the documentation:** In your fork, select the first folder. Expand the context bar on the right to follow the instructions in the collection documentation.\n3. **Submit your solution:** Select the second folder `Submit your solution` and follow the instructions in the documentation to validate your solution.\n\n## Concepts covered\n- [Variables](https://learning.postman.com/docs/sending-requests/variables/)\n- [Scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/)\n- [Writing tests](https://learning.postman.com/docs/writing-scripts/test-scripts/)\n\n## Additional resources\n- [How to break an API](https://youtu.be/c-5UMf6sWk4) livestream\n- [The Unbreakable API](https://www.postman.com/postman/workspace/unbreakable-api/overview) public workspace\n- [Acing your API tests — what you need to know for test automation](https://medium.com/better-practices/acing-your-apis-what-you-need-to-know-for-test-automation-e3fdba3519b9) blog\n\n## Next challenge\n- [UI testing](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-01eeea90-778a-4d8f-82b6-87e16ca7d45e)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "10921002"
+		"_exporter_id": "33917175",
+		"_collection_link": "https://galactic-escape-661823.postman.co/workspace/30-Days-of-Postman~50f5aeaa-518e-4ec1-82bd-08e5d455948a/collection/33917175-e092daa8-8142-4a38-9636-6d66e9a88350?action=share&source=collection_link&creator=33917175"
 	},
 	"item": [
 		{
@@ -16,6 +17,16 @@
 						{
 							"name": "User create endpoint",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
 								"method": "POST",
 								"header": [
 									{
@@ -25,7 +36,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"email\": \"postmaster@jecorde.net\",\n    \"password\": \"tegucigalpa\"\n}"
+									"raw": "{\n    \"email\": \"postmaster@jecorde.com\",\n    \"password\": \"tegucigalpa\"\n}"
 								},
 								"url": {
 									"raw": "{{baseUrl}}/api/user/",
@@ -119,11 +130,22 @@
 											"var jsonData = pm.response.json();\r",
 											"pm.collectionVariables.set(\"id\", jsonData.id);"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
 								"method": "POST",
 								"header": [
 									{
@@ -154,9 +176,9 @@
 										"method": "POST",
 										"header": [
 											{
-												"description": "(Required) Bearer < JWT >",
 												"key": "Authorization",
-												"value": "culpa aliqua"
+												"value": "culpa aliqua",
+												"description": "(Required) Bearer < JWT >"
 											}
 										],
 										"url": {
@@ -412,9 +434,9 @@
 										"method": "DELETE",
 										"header": [
 											{
-												"description": "(Required) Bearer < JWT >",
 												"key": "Authorization",
-												"value": "culpa aliqua"
+												"value": "culpa aliqua",
+												"description": "(Required) Bearer < JWT >"
 											}
 										],
 										"url": {
@@ -453,9 +475,9 @@
 										"method": "DELETE",
 										"header": [
 											{
-												"description": "(Required) Bearer < JWT >",
 												"key": "Authorization",
-												"value": "culpa aliqua"
+												"value": "culpa aliqua",
+												"description": "(Required) Bearer < JWT >"
 											}
 										],
 										"url": {
@@ -618,6 +640,21 @@
 				}
 			],
 			"description": "It's time to work on your next challenge.\n\n1. **Import API and Collection**: [Import data](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#importing-postman-data) from the following link: \n  - `https://www.unbreakableapi.com/apispec.json` \n\n  Select the checkbox to \"Generate collection from imported APIs\" as Documentation. Once confirmed, you should see an API and a collection, both called `Unbreakable API Lite`.\n1. **Configure base URL**: In this collection `Day 27: Scenario testing`, add a collection variable called `baseUrl` with the value `https://www.unbreakableapi.com`, and save your changes.\n1. **Add folders**: Add two new folders called `Set up` and `Create new movie` nested under the `Scenario testing` folder.\n1. **Set up authorization**: Find the following request in the `Unbreakable API Lite` collection, and duplicate it over to the `Set up` folder. \n\n  - `POST` User create endpoint\n\n  Under the **Body** tab, update the email and password of your new user, and hit **Send**. The response will include a token. Copy and paste the token to manually set a collection variable called `token`. Set a `Bearer Token` authorization type for the folder `Create new movie` using the new `token` variable.\n1. **Add a scenario**: Find the following requests in the `Unbreakable API Lite` collection, and duplicate them over to the `Create new movie` folder.\n  - `POST` Movie create endpoint\n  - `GET` Movie read endpoint\n  - `GET` All movies read endpoint\n  - `DELETE` Movie delete endpoint\n  - `GET` All movies read endpoint\n\n  For each of the requests in the `Create new movie` folder, let's add a test and some code to programmatically get and set a variable.\n  - `POST` Movie create endpoint - Update the request body with details of a different movie. Add a Postman test to verify a successful response (you may need to send the request first). Then, add some code to set a collection variable called `id` to store the new movie's id. Send the request again to verify the variable is set correctly.\n  - `GET` Movie read endpoint - Update the query parameter to utilize your new `id` variable. Add a test to verify a successful response.\n  - `GET` All movies read endpoint - Add a test to verify the list of all movies includes your new movie's id.\n  - `DELETE` Movie delete endpoint - Update the query parameter to utilize your new `id` variable. Add a test to verify a successful response, and **Send** to delete the movie.\n  - `GET` All movies read endpoint - Add a test to verify the list of all movies does NOT include your movie's id.\n1. **Run the folder**: Use the runner to execute all the requests in the folder `Create new movie`. Make sure all your tests pass, and save your changes.\n\nOnce you complete these steps, move on to the next folder in this collection to submit your solution. Follow the instructions in the request documentation.",
+			"auth": {
+				"type": "apikey",
+				"apikey": [
+					{
+						"key": "key",
+						"value": "x-api-key",
+						"type": "string"
+					},
+					{
+						"key": "value",
+						"value": "{{postman_api_key}}",
+						"type": "string"
+					}
+				]
+			},
 			"event": [
 				{
 					"listen": "prerequest",
@@ -796,6 +833,16 @@
 			"description": "Follow the instructions in the request documentation."
 		}
 	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
 	"event": [
 		{
 			"listen": "prerequest",
