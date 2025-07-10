@@ -1,10 +1,11 @@
 {
 	"info": {
-		"_postman_id": "e115c031-c039-4b22-8473-3ff06a760046",
+		"_postman_id": "d70199ca-7c60-4c4d-b730-42f28f04f08f",
 		"name": "Day 17: Visualizations",
 		"description": "## Instructions for Day 17: Visualizations\n\n1. **Get the challenge:** Fork [the parent collection `Day 17: Visualizations`](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-0b4d01c7-25b5-4296-91e2-bad1baaf3c6d) from the main workspace to your own public workspace.\n2. **Read the documentation:** In your fork, select the first folder. Expand the context bar on the right to follow the instructions in the collection documentation.\n3. **Submit your solution:** Select the second folder `Submit your solution` and follow the instructions in the documentation to validate your solution.\n\n## Concepts covered\n- [Visualizing responses](https://learning.postman.com/docs/sending-requests/visualizer/)\n\n## Additional resources\n- [Visualizer demo](https://youtu.be/i1jU-kivApg) video\n- [Postman visualizer: More than meets the eye](https://blog.postman.com/how-to-visualize-api-data-in-postman/) blog\n- [Graphing COVID Time Series Data Using Chart.js](https://blog.postman.com/how-to-graphing-covid-time-series-data-using-chart-js-and-postman-visualizer/) tutorial\n- [Visualizing Open Brewery Data with Bootstrap](https://blog.postman.com/visualizing-open-brewery-data-with-bootstrap/) tutorial\n\n## Next challenge\n\n- [API specifications](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-c385b569-e55a-4d4f-b252-51a33311ca78)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "10921002"
+		"_exporter_id": "33917175",
+		"_collection_link": "https://galactic-escape-661823.postman.co/workspace/30-Days-of-Postman~50f5aeaa-518e-4ec1-82bd-08e5d455948a/collection/33917175-d70199ca-7c60-4c4d-b730-42f28f04f08f?action=share&source=collection_link&creator=33917175"
 	},
 	"item": [
 		{
