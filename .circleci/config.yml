@@ -384,13 +384,13 @@ jobs:
               newman run ./'Day17 Visualizations'/17Visualizations.postman_collection.json -e ./'Day17 Visualizations'/'Postman API Env Day 17.postman_environment.json' \
                -r cli, json
 
-      - run: |
+     - run: |
               echo "Run the collection and the environment Day 18"
               echo "Let us look up files"
-             cd ~/project
+              cd ~/project
 
               newman run ./'Day18 APISpecifications'/18APISpecifications.postman_collection.json -e ./'Day18 APISpecifications'/'Postman API Env Day 18.postman_environment.json' \
-               -r cli, json
+              -r cli, json
 
        - run: |
               echo "Run the collection and the environment Day 19"
