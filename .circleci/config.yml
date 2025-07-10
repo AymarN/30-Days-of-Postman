@@ -347,7 +347,6 @@ jobs:
       - run: |
               echo "Run the collection and the environment Day 11"
               echo "Let us look up files"
-              echo "API token expiration date October 11 2024"
               cd ~/project
 
               newman run ./'Day11 Monitoring'/11Monitoring.postman_collection.json -e ./'Day11 Monitoring'/'Day 11 Environment.postman_environment.json' \
@@ -356,7 +355,6 @@ jobs:
       - run: |
               echo "Run the collection and the environment Day 12"
               echo "Let us look up files"
-              echo "API token expiration date October 11 2024"
               cd ~/project
 
               newman run ./'Day12 Postman API'/'12Postman API.postman_collection.json' -e ./'Day12 Postman API'/'Postman API env.postman_environment.json' \
@@ -364,9 +362,8 @@ jobs:
 
       - run: |
               echo "Run the collection and the environment Day 13"
-              echo "Let us look up files"
-              echo "API token expiration date October 11 2024"
-              cd ~/project
+               echo "Let us look up files"
+               cd ~/project
 
               newman run ./'Day13 Newman'/13Newman.postman_collection.json -e ./'Day13 Newman'/'Day 13 Environment.postman_environment.json' \
                -r cli, json
@@ -382,7 +379,6 @@ jobs:
       - run: |
               echo "Run the collection and the environment Day 17"
               echo "Let us look up files"
-              echo "API token expiration date October 11 2024"
               cd ~/project
 
               newman run ./'Day17 Visualizations'/17Visualizations.postman_collection.json -e ./'Day17 Visualizations'/'Postman API Env Day 17.postman_environment.json' \
@@ -391,11 +387,18 @@ jobs:
       - run: |
               echo "Run the collection and the environment Day 18"
               echo "Let us look up files"
-              echo "API token expiration date October 11 2024"
-              cd ~/project
+             cd ~/project
 
               newman run ./'Day18 APISpecifications'/18APISpecifications.postman_collection.json -e ./'Day18 APISpecifications'/'Postman API Env Day 18.postman_environment.json' \
                -r cli, json
+
+       - run: |
+              echo "Run the collection and the environment Day 19"
+              echo "Let us look up files"
+              cd ~/project
+
+              newman run ./'Day19 GraphQL'/'Day 19- GraphQL.postman_collection.json' -e ./'Day19 GraphQL'/'Day 19 Environment.postman_environment.json' \
+              -r cli, json
                
       - run: |
               echo "Run the collection and the environment Day 20"
