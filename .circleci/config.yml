@@ -239,20 +239,18 @@ jobs:
       - run: |
               echo "Run the collection and the environment Day 26"
               echo "Let us look up files"
-              echo "API token expiration date October 11 2024"
               cd ~/project
 
               newman run ./'Day26 Parse HTML response'/26Parse_HTML_response.postman_collection.json -e ./'Day26 Parse HTML response'/'Postman API Env Day 26.postman_environment.json' \
                -r cli, json
 
-      - run: |
-              echo "Run the collection and the environment Day 27"
-              echo "Let us look up files"
-              echo "API token expiration date October 11 2024"
-              cd ~/project
+    #  - run: |
+    #          echo "Run the collection and the environment Day 27"
+    #          echo "Let us look up files"
+    #          cd ~/project
 
-              newman run ./'Day27 Scenario testing'/27Scenario_testing.postman_collection.json -e ./'Day27 Scenario testing'/'Postman API Env Day 27.postman_environment.json' \
-               -r cli, json
+    #           newman run ./'Day27 Scenario testing'/27Scenario_testing.postman_collection.json -e ./'Day27 Scenario testing'/'Postman API Env Day 27.postman_environment.json' \
+    #           -r cli, json
 
               
   deploy:
