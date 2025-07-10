@@ -1,10 +1,11 @@
 {
 	"info": {
-		"_postman_id": "8220b1c2-c890-46c7-8fef-45d3eae42062",
+		"_postman_id": "3f19f776-a153-41a6-b3c4-82b6182b6e9e",
 		"name": "Day 26: Parse HTML response",
 		"description": "## Instructions for Day 26: Parse HTML response\n\n1. **Get the challenge:** Fork [the parent collection `Day 26: Parse HTML response`](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-9f9419fe-5249-4b44-b07f-4cb3ef913c81) from the main workspace to your own public workspace.\n2. **Read the documentation:** In your fork, select the first folder. Expand the context bar on the right to follow the instructions in the collection documentation.\n3. **Submit your solution:** Select the second folder `Submit your solution` and follow the instructions in the documentation to validate your solution.\n\n## Concepts covered\n- [Variables](https://learning.postman.com/docs/sending-requests/variables/)\n- [Scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/)\n- [Using external libraries](https://learning.postman.com/docs/writing-scripts/script-references/postman-sandbox-api-reference/#using-external-libraries)\n- [Writing tests](https://learning.postman.com/docs/writing-scripts/test-scripts/)\n\n## Additional resources\n- [Example](https://www.postman.com/postman/workspace/postman-answers/collection/9215231-cd114167-c5a1-495e-a50f-29d6dd5af4e0?ctx=documentation) in Postman Answers workspace\n- [Check for Broken Links on Your Website Using a Postman Collection](https://blog.postman.com/check-for-broken-links-on-your-website-using-a-postman-collection/) blog\n\n## Next challenge\n\n- [Scenario testing](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-e9968036-7ad8-4daa-97c3-331184213392)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "10921002"
+		"_exporter_id": "33917175",
+		"_collection_link": "https://galactic-escape-661823.postman.co/workspace/30-Days-of-Postman~50f5aeaa-518e-4ec1-82bd-08e5d455948a/collection/33917175-3f19f776-a153-41a6-b3c4-82b6182b6e9e?action=share&source=collection_link&creator=33917175"
 	},
 	"item": [
 		{
