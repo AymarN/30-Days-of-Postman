@@ -214,20 +214,18 @@ jobs:
       - run: |
               echo "Run the collection and the environment Day 23"
               echo "Let us look up files"
-              echo "API token expiration date October 11 2024"
               cd ~/project
 
      #         newman run ./'Day23 Data files'/23Datafiles.postman_collection.json -e "./'Day23 Data files'/'Postman API Env Day 23.postman_environment.json' \
      #         -r cli, json -d 'geoMap.csv' -n 1
 
-      - run: |
-              echo "Run the collection and the environment Day 24"
-              echo "Let us look up files"
-              echo "API token expiration date October 11 2024"
-              cd ~/project
+    #- run: |
+    #          echo "Run the collection and the environment Day 24"
+    #          echo "Let us look up files"
+    #          cd ~/project
 
-              newman run ./'Day24 Using libraries'/'24Using libraries.postman_collection.json' -e ./'Day24 Using libraries'/'Postman API Env Day 24.postman_environment.json' \
-               -r cli, json
+    #          newman run ./'Day24 Using libraries'/'24Using libraries.postman_collection.json' -e ./'Day24 Using libraries'/'Postman API Env Day 24.postman_environment.json' \
+    #           -r cli, json
                
       - run: |
               echo "Run the collection and the environment Day 25"
