@@ -238,7 +238,7 @@ jobs:
       #       - .
 
   test-newman:
-    executor: node/default
+    #executor: node/default
     steps:
       - checkout
       - run: |
