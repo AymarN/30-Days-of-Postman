@@ -155,7 +155,7 @@
 							"apikey": [
 								{
 									"key": "value",
-									"value": "{{vault:postman-api:value}}",
+									"value": "{{30DaysMigration_Key}}",
 									"type": "string"
 								},
 								{
