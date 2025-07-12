@@ -201,7 +201,7 @@ jobs:
               cd ~/project
 
               newman run ./'Day19 GraphQL'/'Day 19 Environment.postman_environment.json' -e ./'Day19 GraphQL'/'Day 19- GraphQL.postman_collection.json' \
-               -r cli
+               -r cli,json
                
       - run: |
               echo "Run the collection and the environment Day 20"
