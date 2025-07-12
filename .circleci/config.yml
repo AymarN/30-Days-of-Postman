@@ -88,7 +88,7 @@ jobs:
               cd ~/project
 
               newman run ./'Day2 Collections and environments'/02Collections_and_environments.postman_collection.json -e ./'Day2 Collections and environments'/'Day 02 Environment.postman_environment.json' \
-               -r cli, json
+               -r cli,json
              
       - run: |
               echo "Run the collection and the environment Day 03"
@@ -96,7 +96,7 @@ jobs:
               cd ~/project
 
               newman run ./'Day3 Add request details'/03Add_Request_details.postman_collection.json  -e ./'Day3 Add request details'/'Day 03 Environment.postman_environment.json' \
-               -r cli, json
+               -r cli,json
 
       - run: |
               echo "Run the collection and the environment Day 04"
@@ -104,7 +104,7 @@ jobs:
               cd ~/project
 
               newman run ./'Day4 Authorization'/04Authorization.postman_collection.json  -e ./'Day4 Authorization'/'Day 04 Environment.postman_environment.json' \
-               -r cli, json
+               -r cli,json
 
       #- run: |
       #        echo "Run the collection and the environment Day 05"
@@ -121,7 +121,7 @@ jobs:
               cd ~/project
 
               newman run ./Day7Debugging/"Day 07- Debugging.postman_collection.json" -e ./Day7Debugging/'Day 07 Environment.postman_environment.json' \
-               -r cli, json
+               -r cli,json
                
       - run: |
               echo "Run the collection and the environment Day 08"
@@ -129,7 +129,7 @@ jobs:
               cd ~/project
 
               newman run ./'Day8 Run a collection'/08Run_a_collection.postman_collection.json -e ./'Day8 Run a collection'/'Day 08 Environment.postman_environment.json'  \
-               -r cli, json
+               -r cli,json
 
       - run: |
               echo "Run the collection and the environment Day 09"
@@ -137,7 +137,7 @@ jobs:
               cd ~/project
 
               newman run ./'Day9 Scripting'/09Scripting.postman_collection.json -e ./'Day9 Scripting'/'Day 09 Environment.postman_environment.json'  \
-               -r cli, json
+               -r cli,json
 
       - run: |
               echo "Run the collection and the environment Day 10"
@@ -145,7 +145,7 @@ jobs:
               cd ~/project
 
               newman run ./'Day10 Mock services'/10Mock_services.postman_collection.json -e ./'Day10 Mock services'/'Day 10 Environment.postman_environment.json' \
-               -r cli, json
+               -r cli,json
 
       #- run: |
       #        echo "Run the collection and the environment Day 11"
@@ -185,7 +185,7 @@ jobs:
               cd ~/project
 
               newman run ./'Day17 Visualizations'/17Visualizations.postman_collection.json -e ./'Day17 Visualizations'/'Postman API Env Day 17.postman_environment.json' \
-               -r cli, json
+               -r cli,json
 
       #- run: |
       #        echo "Run the collection and the environment Day 18"
@@ -209,7 +209,7 @@ jobs:
               cd ~/project
 
               newman run ./'Day20 Documentation'/20Documentation.postman_collection.json -e ./'Day20 Documentation'/'Postman API Env Day 20.postman_environment.json' \
-               -r cli, json
+               -r cli,json
                
       - run: |
               echo "Run the collection and the environment Day 23"
@@ -234,7 +234,7 @@ jobs:
               cd ~/project
 
               newman run  ./'Day25 Dynamic request bodies'/'25Dynamic request bodies.postman_collection.json' -e ./'Day25 Dynamic request bodies'/'Postman API Env Day 25.postman_environment.json' \
-               -r cli, json
+               -r cli,json
 
       - run: |
               echo "Run the collection and the environment Day 26"
@@ -242,7 +242,7 @@ jobs:
               cd ~/project
 
               newman run ./'Day26 Parse HTML response'/26Parse_HTML_response.postman_collection.json -e ./'Day26 Parse HTML response'/'Postman API Env Day 26.postman_environment.json' \
-               -r cli, json
+               -r cli,json
 
     #  - run: |
     #          echo "Run the collection and the environment Day 27"
